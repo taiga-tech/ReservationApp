@@ -1,0 +1,17 @@
+= form_with model: @user, local: true do |f|
+  = f.label :name do
+    名前
+  = f.text_field :name
+  = f.label :email do
+    email
+  = f.text_field :email
+  = f.label :tel do
+    tel
+  = f.telephone_field :tel
+  = f.label :request do
+    request
+  = f.text_area :request
+  = f.label :image do
+    image
+  = f.file_field :image
+  = f.submit "send"
