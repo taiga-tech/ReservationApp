@@ -1,0 +1,11 @@
+%header
+  = render "layouts/management-header"
+
+
+= link_to new_gallery_path do
+  new
+- @galleries.each do |gallery|
+  = link_to gallery_path(gallery.id), method: "delete" do
+    = "delete#{gallery.id}"
+
+%h1 一覧表示させて削除するだけ、できればreactで画像確認モーダル実装

@@ -1,0 +1,13 @@
+%div
+  = @menu.name
+%div
+  = @menu.price
+%div
+  = @tax_price
+%div
+  = "#{(@tax * 100).ceil}%"
+%div
+  = @menu.comment
+%div
+  - @menu.categories.each do |category|
+    = category.name

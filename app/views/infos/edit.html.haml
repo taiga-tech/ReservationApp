@@ -1,0 +1,31 @@
+%header
+  = render "layouts/management-header"
+.Edit
+  .card
+    %h1.card-header 店舗情報編集
+    = form_with model: @info, class: "card-body", local: true  do |f|
+      .form-group.card-title
+        = f.label :code, "郵便番号", class: "card-text" do
+          郵便番号
+        = f.text_field :code, class: "form-control"
+      .form-group
+        = f.label :address, "住所" do
+          住所
+        = f.text_field :address, class: "form-control"
+      .form-group
+        = f.label :tel, "電話番号" do
+          電話番号
+        = f.telephone_field :tel, class: "form-control"
+      .form-group
+        = f.label :weekday, "火曜日〜土曜日" do
+          火曜日〜土曜日
+        = f.text_field :weekday, class: "form-control"
+      .form-group
+        = f.label :weekend, "日曜日" do
+          日曜日
+        = f.text_field :weekend, class: "form-control"
+      .form-group
+        = f.label :holiday, "定休日" do
+          定休日
+        = f.text_field :holiday, class: "form-control"
+      = f.submit "Save", class: "btn btn-outline-info"

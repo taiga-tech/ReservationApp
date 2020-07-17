@@ -1,0 +1,17 @@
+.footer
+  %nav.footer__nav
+    .footer__nav--list
+      %ul
+        %li
+          = @info.code
+        %li
+          = @info.address
+        %li
+          = link_to "tel:#{@phone}" do
+            = @phone
+        %li
+          = @info.weekday
+        %li
+          = @info.weekend
+        %li
+          = @info.holiday
