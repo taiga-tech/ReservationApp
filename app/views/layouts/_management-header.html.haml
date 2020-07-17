@@ -1,0 +1,24 @@
+.Header
+  %nav.navbar.navbar-dark.bg-dark
+    %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarColor01", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarColor01", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    .navbar-brand
+      = @title
+    #navbarColor01.collapse.navbar-collapse
+      %ul.navbar-nav.mr-auto
+        %li.nav-item.active
+          = link_to root_path, class: "nav-link" do
+            home
+            %span.sr-only (current)
+        %li.nav-item
+          = link_to galleries_path, class: "nav-link" do
+            Gallery
+        %li.nav-item
+          = link_to "#", class: "nav-link" do
+            Reservation
+        %li.nav-item
+          = link_to "#", class: "nav-link" do
+            staff
+        %li.nav-item
+          = link_to menus_path, class: "nav-link" do
+            Menu
