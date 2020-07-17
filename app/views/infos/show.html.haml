@@ -1,0 +1,40 @@
+.Update
+  .card
+    .alert.alert-secondary
+      編集内容を確認してください
+    %h3.card-header
+      郵便番号
+    .card-body
+      %h4.card-title
+        = @info.code
+    %h3.card-header
+      住所
+    .card-body
+      %h4.card-title
+        = @info.address
+    %h3.card-header
+      電話番号
+    .card-body
+      %h4.card-title
+        = @phone
+    %h3.card-header
+      火曜日〜土曜日
+    .card-body
+      %h4.card-title
+        = @info.weekday
+    %h3.card-header
+      日曜日
+    .card-body
+      %h4.card-title
+        = @info.weekend
+    %h3.card-header
+      定休日
+    .card-body
+      %h4.card-title
+        = @info.holiday
+    .Btn
+      = link_to edit_info_path(@info), class: "btn btn-outline-danger check" do
+        編集画面へ戻る
+      -# 管理画面へのリンクは後ほど作成
+      = link_to infos_path, class: "btn btn-outline-info check" do
+        管理画面へ戻る

@@ -1,0 +1,23 @@
+%header
+  = render "layouts/management-header"
+.Main
+  .Main__card
+    = link_to edit_info_path(@info), class: "Card" do
+      = image_tag '/images/sample.jpg', width: "425", height: "300"
+      .Card__Text
+        %p Meta
+  .Main__card
+    = link_to galleries_path, class: "Card" do
+      = image_tag '/images/sample.jpg', width: "425", height: "300"
+      .Card__Text
+        %p Gallery
+  .Main__card
+    = link_to users_path, class: "Card" do
+      = image_tag '/images/sample.jpg', width: "425", height: "300"
+      .Card__Text
+        %p User
+  .Main__card
+    = link_to menus_path, class: "Card" do
+      = image_tag '/images/sample.jpg', width: "425", height: "300"
+      .Card__Text
+        %p Menu
