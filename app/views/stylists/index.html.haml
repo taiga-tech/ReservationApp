@@ -1,0 +1,12 @@
+%header
+  = render "layouts/management-header"
+= link_to new_stylist_path do
+  new
+- @stylists.each do |stylist|
+  %div
+    = link_to stylist_path(stylist) do
+      -# ifはデフォルト画像を設定したら外す
+      = image_tag stylist.image.url if stylist.image.present?
+      = stylist.id
+      = stylist.name
+      = stylist.comment
