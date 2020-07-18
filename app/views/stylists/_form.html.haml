@@ -1,0 +1,11 @@
+= form_with model: @stylist, local: true do |f|
+  = f.label :name do
+    name
+    = f.text_field :name
+  = f.label :comment do
+    自己紹介
+    = f.text_area :comment
+  = f.label :image do
+    image
+    = f.file_field :image
+  = f.submit "送信"
