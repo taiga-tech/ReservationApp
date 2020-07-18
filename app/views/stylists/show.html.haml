@@ -1,0 +1,8 @@
+%div
+  = @stylist.name
+  = @stylist.comment
+  = image_tag @stylist.image.url if @stylist.image.present?
+
+%div
+  = link_to stylist_path(@stylist), method: "delete" do
+    削除

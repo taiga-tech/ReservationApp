@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users
   resources :menus
   resources :categories, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :stylists
 end
