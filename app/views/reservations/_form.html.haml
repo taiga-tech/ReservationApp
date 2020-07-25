@@ -1,0 +1,93 @@
+-# ajaxで実装する
+= form_with model: @reservation, local: true, class: "ReservForm__contents" do |f|
+
+  .ReservForm__contents--stylist
+    .StylistHeader
+      %h4 Stylist Select
+    .StylistContents
+      - @stylists.each do |stylist|
+        .StylistContents__Box
+          .StylistContents__Box--Item
+            = f.radio_button :stylist_id, "#{stylist.id}", class: "hidden"
+            = f.label :"stylist_id_#{stylist.id}", class: "StylistContents__Box--Item--label" do
+              = image_tag stylist.image_url, class: "Image"
+              %span.check
+                = icon("fas", "check")
+          .StylistContents__Box--info
+            .Info
+              .Info__name
+                = stylist.name
+              .Info__position
+                = stylist.position
+            .comment
+              = stylist.comment
+
+    .BTN.MENU.next
+      = icon("fas", "chevron-down")
+
+  .ReservForm__contents--menu
+    .MenuHeader
+      %h4 Menu select
+    .MenuContents
+      - @menus.each do |menu|
+        .MenuContents__Box
+          .MenuContents__Box--Item
+            = f.radio_button :menu_id, "#{menu.id}", class: "hidden"
+            = f.label :"menu_id_#{menu.id}", class: "MenuContents__Box--Item--label" do
+              .Item
+                .Item__top
+                  .Item__top--name
+                    = menu.name
+                  .Item__top--price
+                    = "¥#{menu.price}(税抜)"
+              .Item__buttom
+                - menu.categories.each do |category|
+                  = category.name
+              %span.check
+                = icon("fas", "check")
+
+    .BTN.DATE.next
+      = icon("fas", "chevron-down")
+
+  .ReservForm__contents--date
+    .DateHeader
+      %h4 Date select
+    .DateContents
+      = f.label :date do
+        予約日
+      = f.date_field :date
+      = f.label :time do
+        予約時間
+      = f.time_field :time
+
+    .BTN.USER.next
+      = icon("fas", "chevron-down")
+
+  .ReservForm__contents--user
+    .UserHeader
+      %h4 お客様情報
+    .UserContents
+      .UserContents__Item--name
+        .ItemTitle
+          = f.label :name
+        = f.text_field :name, class: "field"
+      .UserContents__Item--email
+        .ItemTitle
+          = f.label :email
+        = f.text_field :email, class: "field"
+      .UserContents__Item--tel
+        .ItemTitle
+          = f.label :tel
+        = f.telephone_field :tel, class: "field"
+      .UserContents__Item--request
+        .Request__image
+          .ItemTitle
+            = f.label :image
+          = f.file_field :image
+        .Request__text
+          .ItemTitle
+            = f.label :request
+          = f.text_area :request
+
+    .ReservForm__contents--submit
+      = f.submit "送信"
