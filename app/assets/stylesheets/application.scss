@@ -3,7 +3,9 @@
 @import "font-awesome";
 @import "reset";
 @import "header";
-@import "managements/management-header";
+@import "managements/header";
 @import "footer";
-@import "modules/infos";
-@import "modules/galleries"
+
+body {
+  background-color: rgb(38, 43, 48);
+}

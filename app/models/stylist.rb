@@ -1,5 +1,7 @@
 class Stylist < ApplicationRecord
-  validates :name, presence: true
+  has_many :reservations
+
+  validates :name, :position, presence: true
 
   mount_uploader :image, ImagesUploader
 end

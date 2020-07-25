@@ -63,3 +63,5 @@ gem "mini_magick"
 gem "jquery-rails"
 gem "bootstrap"
 gem 'phonelib'
+# gem "gmaps4rails"
+# gem "geocoder"

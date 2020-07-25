@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+
+}
+
+.Reserv {
+  background-color: rgb(38, 43, 48);
+  color: #fff;
+  .ReservForm {
+    &__header {
+      border-bottom: 1px solid #fff;
+      margin: 30px 20px;
+    }
+    &__contents {
+      padding: 0 50px;
+      flex-direction: column;
+      .BTN {
+        text-align: center;
+        font-size: 50px;
+      }
+      &--stylist {
+        height: calc(100vh - 150px);
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        .StylistHeader {
+          margin-bottom: 10px;
+        }
+        .StylistContents {
+          display: flex;
+          justify-content: space-between;
+          // align-items: center;
+          height: 100%;
+          &__Box {
+            text-align: center;
+            margin-top: 40px;
+            width: 242px;
+            height: auto;
+            &--Item {
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              margin: 10px;
+              &--label {
+                padding: 10px;
+                opacity: 0.7;
+                .Image {
+                  width: 200px;
+                  height: 200px;
+                  position: relative;
+                }
+                // .NamePlate {
+                //   position: absolute;
+                //   right: 0px;
+                //   bottom: 0px;
+                //   background-color: rgba(94, 120, 146, 0.3);
+                //   padding: 5px 15px;
+                //   color: #fff;
+                //   font-size: 17px;
+                //   font-weight: 900;
+                // }
+                .check {
+                  display: none;
+                }
+              }
+              &--label:hover {
+                background-color: rgb(53, 61, 68);
+              }
+              .hidden {
+                display: none;
+              }
+              .hidden:checked + .StylistContents__Box--Item--label {
+                opacity: 1;
+                border: 1px solid #fff;
+                padding: 10px;
+                .check {
+                  display: block;
+                  z-index: 1;
+                  position: absolute;
+                  top: 0;
+                  right: 15px;
+                  color: #fff;
+                  font-size: 50px;
+                }
+              }
+            }
+            &--info {
+              .Info {
+                display: flex;
+                // justify-content: space-between;
+                align-items: flex-end;
+                padding: 0 20px;
+                &__name {
+                  font-size: 20px;
+                }
+                &__position {
+                  margin-left: 5px;
+                }
+              }
+              .comment {
+                text-align: left;
+                margin: 10px;
+              }
+            }
+          }
+
+        }
+      }
+
+      &--menu {
+        padding-top: 50px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        .MenuHeader {
+          margin: 30px 0;
+        }
+        .MenuContents {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          &__Box {
+            width: 50%;
+            padding: 10px;
+            &--Item {
+              &--label {
+                width: 100%;
+                padding: 10px;
+                position: relative;
+                .Item {
+                  &__top {
+                    display: flex;
+                    justify-content: space-between;
+                  }
+                }
+                .check {
+                  display: none;
+                }
+              }
+              .hidden {
+                display: none;
+              }
+              input:checked + .MenuContents__Box--Item--label {
+                border: 1px solid #fff;
+                .check {
+                  display: block;
+                  font-size: 45px;
+                  position: absolute;
+                  top: 0;
+                  left: 50%;
+                }
+              }
+            }
+          }
+          &__Box:hover {
+            background-color: rgba(53, 61, 68, 0.7);
+          }
+        }
+      }
+
+      &--date {
+        padding-top: 50px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        .DateHeader {
+          margin: 30px 0;
+        }
+        .DateContents {
+          height: 100%;
+        }
+      }
+
+      &--user {
+        padding-top: 50px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        .UserHeader {
+          margin: 30px 0;
+        }
+        .UserContents {
+          height: 100%;
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,20 @@
+%div
+  %div
+    = @reservation.name
+  %div
+    = @reservation.email
+  %div
+    = @reservation.tel
+  %div
+    = @reservation.date
+  %div
+    = @reservation.time
+  %div
+    = @reservation.request
+  %div
+    = image_tag @reservation.image.url if @reservation.image.present?
+  %div
+    = @reservation.menu.name
+  %div
+    = @reservation.stylist.name
+

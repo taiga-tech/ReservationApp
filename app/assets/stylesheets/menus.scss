@@ -1,3 +1,37 @@
-// Place all the styles related to the menus controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+.Form, .Update {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .card {
+    width: 50%;
+    margin: 50px;
+    .Checkbox {
+      display: flex;
+      justify-content: space-around;
+      &__item {
+        display: flex;
+        align-items: center;
+        &--btn {
+          margin: 10px;
+        }
+      }
+    }
+    .alert {
+      margin: 0;
+      font-weight: bold;
+    }   
+    .Btn {
+      display: flex;
+      .check {
+        margin: 5px;
+      }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+}

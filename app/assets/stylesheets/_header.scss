@@ -1,4 +1,5 @@
 .Header {
+  width: 100vw;
   &__Container {
     height: 100vh;
     width: 100vw;
@@ -16,18 +17,18 @@
       align-items: center;
       height: calc(100vh - 50px);
       .outLine {
-        font-family: ShadowsIntoLight;
+        font-family: "Shadows Into Light", cursive;
         font-size: 200px;
         color: transparent;
         -webkit-text-stroke: 2px #fff;
       }
     }
     &--List {
-      font-family: ShadowsIntoLight;
+      font-family: "Shadows Into Light", cursive;
       display: flex;
       z-index: 1;
       height: 50px;
-      width: 100%;
+      width: 100vw;
       justify-content: space-around;
       align-items: center;
       background-color: rgba($color: #454947, $alpha: 0.4);
@@ -52,8 +53,9 @@
 
 
 // js
-.flexd {
+.fixed {
   position: fixed;
   top: 0;
+  width: 100vw;
   color: #000000;
 }

@@ -1,0 +1,11 @@
+- @reservations.each do |reservation|
+  %div
+    = reservation.name
+    = reservation.email
+    = reservation.tel
+    = reservation.date
+    = reservation.time
+    = reservation.request
+    = image_tag reservation.image.url if reservation.image.present?
+    = reservation.menu.name
+    = reservation.stylist.name

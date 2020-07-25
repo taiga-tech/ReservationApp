@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_090605) do
+ActiveRecord::Schema.define(version: 2020_07_18_120840) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,31 @@ ActiveRecord::Schema.define(version: 2020_07_17_090605) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "tel", null: false
+    t.string "date", null: false
+    t.string "time", null: false
+    t.text "request"
+    t.string "image"
+    t.bigint "menu_id"
+    t.bigint "stylist_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id"], name: "index_reservations_on_menu_id"
+    t.index ["stylist_id"], name: "index_reservations_on_stylist_id"
+  end
+
+  create_table "stylists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "position", null: false
+    t.text "comment"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "taxes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.float "tax", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -62,12 +87,12 @@ ActiveRecord::Schema.define(version: 2020_07_17_090605) do
     t.string "name", null: false
     t.string "email", null: false
     t.string "tel", null: false
-    t.text "request"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "menu_categories", "categories"
   add_foreign_key "menu_categories", "menus"
+  add_foreign_key "reservations", "menus"
+  add_foreign_key "reservations", "stylists"
 end

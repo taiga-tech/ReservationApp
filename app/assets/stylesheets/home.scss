@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0;
+}
+
+.Main {
+  // height: 3000px;
+  width: 100vw;
+  background-color: rgb(38, 43, 48);
+
+
+  .Menu {
+    padding-top: 200px;
+    color: #fff;
+    &__header {
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      border-bottom: 1px solid #fff;
+    }
+    &__contents {
+      margin: 20px 35px;
+      .Menubox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
+        &__left {
+          padding-left: 10px;
+          &--name {
+            font-size: 17px;
+            font-weight: 600;
+          }
+          &--category {
+            font-size: 15px;
+            opacity: 0.7;
+          }
+        }
+        &__right {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  .Stylist {
+    padding-top: 200px;
+    color: #fff;
+    &__header {
+      font-weight: 900;
+      height: 50px;
+      border-bottom: 1px solid #fff;
+      text-align: center;
+    }
+    &__contents {
+      overflow-x: scroll;
+      margin: 20px 35px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      &--item:hover {
+        opacity: 1;
+      }
+      &--item {
+        margin: 0 10px;
+        padding: 10px;
+        opacity: 0.7;
+        border: 1px solid rgba($color: #fff, $alpha: 0.8);
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+        .Item {
+          &__image {
+            width: 200px;
+            height: 200px;
+          }
+          &__name {
+            font-weight: 800;
+          }
+          &__position {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .Gallery {
+    padding-top: 200px;
+    color: #fff;
+    &__header {
+      font-weight: 900;
+      height: 50px;
+      border-bottom: 1px solid #fff;
+      text-align: center;
+    }
+    &__contents {
+      margin: 20px 35px;
+      &--item {
+        img {
+          width: 100vw;
+          height: 70vh;
+          object-fit: cover;
+        }
+        button:before {
+          display: none;
+        }
+      }
+    }
+  }
+  .NewsReservation {
+    display: flex;
+    justify-content: space-between;
+    .News {
+      width: 45%;
+      padding-top: 200px;
+      color: #fff;
+      &__header {
+        font-weight: 900;
+        height: 50px;
+        border-bottom: 1px solid #fff;
+        text-align: center;
+      }
+      &__contents {
+        margin: 50px 20px;
+        &--item {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          .Item {
+            &__content {
+              font-weight: 600;
+            }
+            &__date {
+              font-size: 14px;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+
+    .Reservation {
+      width: 50%;
+      padding-top: 200px;
+      color: #fff;
+      &__header {
+        font-weight: 900;
+        height: 50px;
+        border-bottom: 1px solid #fff;
+        text-align: center;
+      }
+      &__contents {
+        margin: 50px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+        &--Btn {
+          padding: 10px 20px;
+          border-radius: 5px;
+          background-color: #000;
+        }
+      }
+      &__modal {
+        height: 50px;
+        // padding: 0 70px 0 70px;
+        &--title {
+          h5 {
+            width: 100px;
+            border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
+          }
+        }
+        &--text {
+          margin: 10px 0 0 20px;
+        }
+      }
+    }
+  }
+
+  .Acsess {
+    padding-top: 200px;
+    color: #fff;
+    &__header {
+      font-weight: 900;
+      height: 50px;
+      text-align: center;
+    }
+    &__contents {
+      margin-top: 30px;
+      &--gmap {
+        background-color: #fff;
+        color: #000;
+        opacity: 0.2;
+        width: 100%;
+        height: 60vh;
+      }
+    }
+  }
+}

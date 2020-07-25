@@ -12,7 +12,8 @@
       .Card__Text
         %p Gallery
   .Main__card
-    = link_to users_path, class: "Card" do
+    = link_to "#", class: "Card" do
+      / linkを訂正する
       = image_tag '/images/sample.jpg', width: "425", height: "300"
       .Card__Text
         %p User
@@ -26,3 +27,8 @@
       = image_tag '/images/sample.jpg', width: "425", height: "300"
       .Card__Text
         %p category
+  .Main__card
+    = link_to reservations_path, class: "Card" do
+      = image_tag '/images/sample.jpg', width: "425", height: "300"
+      .Card__Text
+        %p reservations

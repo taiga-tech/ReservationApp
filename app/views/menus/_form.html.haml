@@ -1,12 +1,26 @@
-= form_with model: @menu, local: true do |f|
-  = f.label :name do
-    name
-  = f.text_field :name
-  = f.label :price do
-    price
-  = f.text_field :price
-  = f.label :comment do
-    comment
-  = f.text_area :comment
-  = f.collection_check_boxes :category_ids, Category.all, :id, :name
-  = f.submit "送信"
+.Form
+  .card
+    %h1.card-header
+      = @title
+    = form_with model: @menu, class: "card-body", local: true do |f|
+      .form-group.card-title
+        = f.label :name do
+          name
+        = f.text_field :name, class: "form-control"
+      .form-group
+        = f.label :price do
+          price
+        = f.text_field :price, class: "form-control"
+      .form-group
+        = f.label :comment do
+          comment
+        = f.text_area :comment, class: "form-control"
+      .form-group
+        = f.label :category_ids do
+          Categories
+        .Checkbox
+          = f.collection_check_boxes :category_ids, Category.all, :id, :name, class: "form-control" do |b|
+            .Checkbox__item#b.text
+              = b.label class: "Checkbox__item--btn btn"
+              = b.check_box class: "Checkbox__item--hidden"
+      = f.submit "送信", class: "btn btn-outline-info"
