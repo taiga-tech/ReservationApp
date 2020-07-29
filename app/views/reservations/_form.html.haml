@@ -1,6 +1,6 @@
 -# ajaxで実装する
 = form_with model: @reservation, local: true, class: "ReservForm__contents" do |f|
-
+  -# = hidden_field_tag :authenticity_token, form_authenticity_token
   .ReservForm__contents--stylist
     .StylistHeader
       %h4 Stylist Select
@@ -53,12 +53,8 @@
     .DateHeader
       %h4 Date select
     .DateContents
-      = f.label :date do
-        予約日
-      = f.date_field :date
-      = f.label :time do
-        予約時間
-      = f.time_field :time
+      = render "reservations/carender"
+
 
     .BTN.USER.next
       = icon("fas", "chevron-down")
@@ -67,27 +63,31 @@
     .UserHeader
       %h4 お客様情報
     .UserContents
-      .UserContents__Item--name
+      .UserContents__name
         .ItemTitle
-          = f.label :name
+          = f.label :name do
+            %h5 お名前 *
         = f.text_field :name, class: "field"
-      .UserContents__Item--email
+      .UserContents__email
         .ItemTitle
-          = f.label :email
-        = f.text_field :email, class: "field"
-      .UserContents__Item--tel
+          = f.label :email do
+            %h5 メールアドレス *
+        = f.email_field :email, class: "field"
+      .UserContents__tel
         .ItemTitle
-          = f.label :tel
+          = f.label :tel do
+            %h5 電話番号 *
         = f.telephone_field :tel, class: "field"
-      .UserContents__Item--request
-        .Request__image
-          .ItemTitle
-            = f.label :image
-          = f.file_field :image
-        .Request__text
-          .ItemTitle
-            = f.label :request
-          = f.text_area :request
+      .UserContents__request
+        .Request
+          .Request__text
+            .ItemTitle
+              = f.label :request do
+                %h5 ご要望
+            = f.text_area :request, class: "area", rows: "5"
+            = f.label :image, class: "imageicon" do
+              = icon("fas", "images", class: "imageicon")
+            = f.file_field :image, class: "hidden"
 
-    .ReservForm__contents--submit
-      = f.submit "送信"
+      .ReservForm__contents--submit
+        = f.submit "入力確認画面へ"

@@ -1,6 +1,5 @@
 class InfosController < ApplicationController
   before_action :set_info, only: [:index, :show, :edit, :update]
-  before_action :phone_num, only: [:index, :show]
 
   def index
     @title = "管理画面"
@@ -30,7 +29,7 @@ class InfosController < ApplicationController
     @info = Info.find(1)
   end
 
-  def phone_num
-    @phone = Phonelib.parse(@info.tel, :jp).national
-  end
+  # def phone_num
+  #   @phone = Phonelib.parse(@info.tel, :jp).national
+  # end
 end

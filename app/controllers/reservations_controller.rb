@@ -1,8 +1,11 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :set_other, only: [:new, :create, :edit]
+  before_action :set_date, only: [:new, :create, :edit]
+
   def index
     @reservations = Reservation.all
+    @stylists = Stylist.all
     # 管理者のみ
   end
 
@@ -18,13 +21,15 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     # binding.pry
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+      # redirect_to reservation_path(@reservation)
+      render :create
     else
       render :new
     end
   end
 
   def show
+    # @title = "show"
   end
 
   def edit
@@ -33,7 +38,7 @@ class ReservationsController < ApplicationController
 
   def update
     if @reservation.update(reservation_params)
-      # 管理者のみ
+      render :update
     else
       render :edit
     end
@@ -52,6 +57,12 @@ class ReservationsController < ApplicationController
   def set_other
     @stylists = Stylist.all#where(["name LIKE ? ", "%#{params[:keyword]}%"])
     @menus = Menu.all
+  end
+
+  def set_date
+    @today = DateTime.current#.days_since(1)
+    @week = Date.current#.days_since(1)
+    @date = Date.current
   end
 
   def reservation_params

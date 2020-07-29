@@ -79,8 +79,10 @@
         }
         .Item {
           &__image {
-            width: 200px;
-            height: 200px;
+            img {
+              width: 200px;
+              height: 200px;
+            }
           }
           &__name {
             font-weight: 800;

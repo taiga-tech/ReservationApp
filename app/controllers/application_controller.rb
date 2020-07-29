@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
 
   def info
     @info = Info.find(1)
+    @phone = Phonelib.parse(@info.tel, :jp).national
   end
 end

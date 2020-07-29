@@ -1,11 +1,23 @@
-- @reservations.each do |reservation|
-  %div
-    = reservation.name
-    = reservation.email
-    = reservation.tel
-    = reservation.date
-    = reservation.time
-    = reservation.request
-    = image_tag reservation.image.url if reservation.image.present?
-    = reservation.menu.name
-    = reservation.stylist.name
+.ReservContainer
+  .NewBtn
+    .NewReservation
+      = link_to new_reservation_path do
+        = icon("far", "calendar-plus")
+    .NewStylist
+      = link_to new_stylist_path do
+        = icon("fas", "user-plus")
+
+  .ReservationsIndex
+    - @stylists.each do |stylist|
+      .ReservationsIndex__Stylist
+        %h2.ReservationsIndex__Stylist--header
+          = stylist.name
+        .ReservationsIndex__Stylist--Reservation
+          - stylist.reservations.each do |stylistreservation|
+            .Reservation_Link
+              = link_to reservation_path(stylistreservation) do
+                .Reservation__Link--name
+                  = stylistreservation.name
+                  .Reservation__Link--dateTime
+                    = stylistreservation.date
+                    = stylistreservation.time

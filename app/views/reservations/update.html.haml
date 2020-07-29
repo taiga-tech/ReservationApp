@@ -1,6 +1,7 @@
--# %header
--#   = render "layouts/management-header"
+%header
+  = render "layouts/management-header"
 .ReservationShow.container
   .ReservationShow__header
-    %h4= @title
+    %h4
+      = @title
   = render "reservations/reservation"
