@@ -12,7 +12,7 @@ $(function() {
     });
     $(".STYLIST").click(function() {
       $("body,html").animate({
-        scrollTop: $(".ReservForm__contents--stylist").offset().top});
+        scrollTop: $(".Reserv").offset().top});
     });
     $(".DATE").click(function() {
       $("body,html").animate({

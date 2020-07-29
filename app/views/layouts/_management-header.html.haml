@@ -4,17 +4,18 @@
       %span.navbar-toggler-icon
     .navbar-brand
       = @title
+
     #navbarColor01.collapse.navbar-collapse
       %ul.navbar-nav.mr-auto
         %li.nav-item.active
-          = link_to infos_path, class: "nav-link" do
+          = link_to management_index_path, class: "nav-link" do
             home
             %span.sr-only (current)
         %li.nav-item
           = link_to galleries_path, class: "nav-link" do
             Gallery
         %li.nav-item
-          = link_to "#", class: "nav-link" do
+          = link_to reservations_path, class: "nav-link" do
             Reservation
         %li.nav-item
           = link_to stylists_path, class: "nav-link" do
@@ -22,3 +23,8 @@
         %li.nav-item
           = link_to menus_path, class: "nav-link" do
             Menu
+        %li.nav-item
+          = link_to destroy_staff_session_path, method: :delete, class: "nav-link" do
+            LogOut
+
+

@@ -1,9 +1,10 @@
 class InfosController < ApplicationController
-  before_action :set_info, only: [:index, :show, :edit, :update]
+  before_action :authenticate_staff!
+  before_action :set_info, only: [:show, :edit, :update]
 
-  def index
-    @title = "管理画面"
-  end
+  # def index
+  #   @title = "管理画面"
+  # end
 
   def show
   end

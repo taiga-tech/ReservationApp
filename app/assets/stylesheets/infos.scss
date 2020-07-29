@@ -2,29 +2,29 @@
   box-sizing: border-box;
 }
 
-.Main {
-  width: 100%;
-  height: calc(100vh - 56px);
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  overflow-y: scroll;
-  background-color: #2b3131;
-  &__card {
-    padding: 20px;
-    width: 25%;
-    .Card {
-      text-decoration: none;
-      height: 100%;
-      &__Text {
-        background-color: #ffffff;
-        padding: 15px;
-        height: 50px;
-        color: #000;
-      }
-    }
-  }
-}
+// .Main {
+//   width: 100%;
+//   height: calc(100vh - 56px);
+//   display: flex;
+//   justify-content: flex-start;
+//   flex-wrap: wrap;
+//   overflow-y: scroll;
+//   background-color: #2b3131;
+//   &__card {
+//     padding: 20px;
+//     width: 25%;
+//     .Card {
+//       text-decoration: none;
+//       height: 100%;
+//       &__Text {
+//         background-color: #ffffff;
+//         padding: 15px;
+//         height: 50px;
+//         color: #000;
+//       }
+//     }
+//   }
+// }
 
 .Form, .Update {
   display: flex;

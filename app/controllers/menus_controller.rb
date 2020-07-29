@@ -1,4 +1,5 @@
 class MenusController < ApplicationController
+  before_action :authenticate_staff!
   before_action :set_menu, only: [:show, :edit, :update]
   before_action :new_title, only: [:new, :create]
   # before_action :tax_include, only: [:show]

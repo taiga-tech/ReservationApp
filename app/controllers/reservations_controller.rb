@@ -1,7 +1,9 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_staff!, only: [:index, :destroy, :show, :edit, :update, :destroy]
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :set_other, only: [:new, :create, :edit]
   before_action :set_date, only: [:new, :create, :edit]
+  before_action :user_phone, only: [:create, :show, :update]
 
   def index
     @reservations = Reservation.all
@@ -63,6 +65,11 @@ class ReservationsController < ApplicationController
     @today = DateTime.current#.days_since(1)
     @week = Date.current#.days_since(1)
     @date = Date.current
+  end
+
+  def user_phone
+    @user_phone = Phonelib.parse(@reservation.tel, :jp).national
+  #   @phone = Phonelib.parse(@info.tel, :jp).national
   end
 
   def reservation_params

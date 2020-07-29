@@ -1,4 +1,5 @@
 class StylistsController < ApplicationController
+  before_action :authenticate_staff!, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :set_stylist, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'management', to: "management#index"
+  devise_for :staffs
+  resources :management, only: :index
   root "home#index"
-  resources :infos, only: [:index, :show, :edit, :update]
+  resources :infos, only: [:show, :edit, :update]
   resources :galleries, only: [:index, :new, :create, :destroy]
   # resources :users
   resources :menus
