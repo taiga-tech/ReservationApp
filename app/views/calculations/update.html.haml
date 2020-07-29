@@ -1,0 +1,22 @@
+%header
+  = render "layouts/management-header"
+.Update
+  .card
+    .alert.alert-secondary
+      編集内容を確認してください
+    %h3.card-header
+      消費税率
+    .card-body
+      %h4.card-title
+        = "#{(@tax * 100).ceil}%"
+    %h3.card-header
+      値引率
+    .card-body
+      %h4.card-title
+        = "#{(@discount * 100).ceil}%"
+    .Btn
+      = link_to :back, class: "btn btn-outline-danger check" do
+        編集画面へ戻る
+      -# 管理画面へのリンクは後ほど作成
+      = link_to management_index_path, class: "btn btn-outline-info check" do
+        管理画面へ戻る

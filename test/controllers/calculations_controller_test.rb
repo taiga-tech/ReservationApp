@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TaxTest < ActiveSupport::TestCase
+class CalculationsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

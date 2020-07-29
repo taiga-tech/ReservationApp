@@ -55,7 +55,7 @@
           .nameHeader
             %h5 お名前
           .Name.bold
-            = @reservation.name
+            = "#{@reservation.name} 様"
         .Item__user--contents--email
           .emailHeader
             %h5 メールアドレス
@@ -65,14 +65,23 @@
           .telHeader
             %h5 電話番号
           .Tel.bold
-            = @reservation.tel
+            = @user_phone
 
     .Price
       .Price__header.header
         %h4 支払い想定金額 (税込)
       .Price__total
         %h2.bold
-          = "¥#{(@reservation.menu.price + @reservation.menu.price * @tax).ceil} 〜"
+          = "¥#{(@reservation.menu.price * (@tax + 1)).ceil} 〜"
+          %div
+            = "#{(@tax * 100).ceil}%"
+          %div
+            = "¥#{(@reservation.menu.price * @tax).ceil}"
+          %div
+            = "- ¥#{(@reservation.menu.price * 0.05).ceil}"
+          %div
+            = "¥#{((@reservation.menu.price * 0.95) * (@tax + 1)).ceil}"
+
 
     .ReservationShow__link
       = link_to :back, class: "back" do

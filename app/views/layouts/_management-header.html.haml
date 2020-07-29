@@ -24,6 +24,9 @@
           = link_to menus_path, class: "nav-link" do
             Menu
         %li.nav-item
+          = link_to edit_calculation_path(@calculation), class: "nav-link" do
+            消費税率・値引率編集
+        %li.nav-item
           = link_to destroy_staff_session_path, method: :delete, class: "nav-link" do
             LogOut
 

@@ -49,7 +49,7 @@
           .Item__content
             ネット予約はじめました!!
             %br/
-            今ならネット予約すると合計金額から5%OFF!!!
+            = "今ならネット予約すると合計金額から#{(@discount * 100).ceil}%OFF!!!"
           .Item__date
             = Date.today
 

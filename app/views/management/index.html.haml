@@ -32,3 +32,8 @@
       = image_tag '/images/sample.jpg', width: "425", height: "300"
       .Card__Text
         %p reservations
+  .Main__card
+    = link_to edit_calculation_path(@calculation), class: "Card" do
+      = image_tag '/images/sample.jpg', width: "425", height: "300"
+      .Card__Text
+        %p 消費税率・値引率

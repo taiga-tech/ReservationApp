@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configre_permitted_parameters, if: :devise_controller?
-  before_action :tax
+  before_action :calculation
   before_action :info
 
 
@@ -9,8 +9,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
-  def tax
-    @tax = Tax.find(1).tax
+  def calculation
+    @tax = Calculation.find(1).tax
+    @discount = Calculation.find(1).discount
+    @calculation = Calculation.find(1)
   end
 
   def info

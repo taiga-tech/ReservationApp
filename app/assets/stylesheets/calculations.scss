@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.Form, .Update {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .card {
+    width: 50%;
+    margin: 50px;
+    .alert {
+      margin: 0;
+      font-weight: bold;
+    }
+    .Btn {
+      display: flex;
+      .check {
+        margin: 5px;
+      }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+}

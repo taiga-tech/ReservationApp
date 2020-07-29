@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :authenticate_staff!, only: [:index, :destroy, :show, :edit, :update, :destroy]
+  before_action :authenticate_staff!, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :set_other, only: [:new, :create, :edit]
   before_action :set_date, only: [:new, :create, :edit]
@@ -8,7 +8,6 @@ class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
     @stylists = Stylist.all
-    # 管理者のみ
   end
 
   def new
@@ -21,9 +20,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    # binding.pry
     if @reservation.save
-      # redirect_to reservation_path(@reservation)
       render :create
     else
       render :new
@@ -47,7 +44,6 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    # 機能制限
     @reservation.destroy
   end
 
@@ -69,7 +65,6 @@ class ReservationsController < ApplicationController
 
   def user_phone
     @user_phone = Phonelib.parse(@reservation.tel, :jp).national
-  #   @phone = Phonelib.parse(@info.tel, :jp).national
   end
 
   def reservation_params
