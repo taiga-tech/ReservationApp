@@ -47,8 +47,14 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: ReservationApp_production
+#   username: ReservationApp
+#   password: <%= ENV['RESERVATIONAPP_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
-  database: ReservationApp_production
-  username: ReservationApp
-  password: <%= ENV['RESERVATIONAPP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
