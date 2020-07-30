@@ -3,7 +3,8 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :set_other, only: [:new, :create, :edit]
   before_action :set_date, only: [:new, :create, :edit]
-  before_action :user_phone, only: [:create, :show, :update]
+  before_action :user_phone, only: [:show, :update]
+  before_action :price_calculation, only: [:show, :update]
 
   def index
     @reservations = Reservation.all
@@ -32,7 +33,6 @@ class ReservationsController < ApplicationController
   end
 
   def edit
-    # 管理者のみ
   end
 
   def update
@@ -58,13 +58,18 @@ class ReservationsController < ApplicationController
   end
 
   def set_date
-    @today = DateTime.current#.days_since(1)
+    @today = Date.current#.days_since(1)
     @week = Date.current#.days_since(1)
     @date = Date.current
   end
 
   def user_phone
     @user_phone = Phonelib.parse(@reservation.tel, :jp).national
+  end
+
+  def price_calculation
+    @price = @reservation.menu.price
+    @discountPrice = @price * @discount
   end
 
   def reservation_params

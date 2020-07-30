@@ -1,4 +1,84 @@
 .ReservationShow.container
   .ReservationShow__header
     %h4 ご予約内容確認
-  = render "reservations/reservation"
+    .ReservationShow__Item
+      .Item
+        .Item__dateTime
+          .Item__dateTime--header.header
+            %h4 ご予約内容
+          .Item__dateTime--contents
+            .Item__dateTime--content
+              .Item__dateTime--content--date
+                .dateHeader
+                  %h5 予約日
+                .dateContent.bold
+                  = @reservation.date
+              .Item__dateTime--content--time
+                .timeHeader
+                  %h5 予約時間
+                .timeContent.bold
+                  = @reservation.time
+        .Item__stylistMenu
+          .Item__stylistMenu--contents
+            .Stylist
+              .stylsit__header.header
+                %h4 Stylist
+              .stylist__name
+                .content
+                  .img
+                    = image_tag @reservation.stylist.image_url
+                  .name.bold
+                    = @reservation.stylist.name
+                  .position
+                    = @reservation.stylist.position
+            .Menu
+              .Item__menu
+                .Item__menu--header.header
+                  %h4 Menu
+                .Item__menu--contents
+                  .Item__menu--name.bold
+                    = @reservation.menu.name
+                  .Item__menu--price.bold
+                    = "¥#{@reservation.menu.price.to_s(:delimited)}(税別)"
+        .Item__request
+          .Item__request--header.header
+            %h4 Request
+          .Item__request--contents
+            .Item__request--contents--image
+              = image_tag @reservation.image.url if @reservation.image.present?
+            .Item__request--contents--text
+              .requestContent.bold
+                = @reservation.request
+
+        .Item__user
+          .Item__user--header.header
+            %h4 お客様情報
+          .Item__user--contents
+            .Item__user--contents--name
+              .nameHeader
+                %h5 お名前
+              .Name.bold
+                = "#{@reservation.name} 様"
+            .Item__user--contents--email
+              .emailHeader
+                %h5 メールアドレス
+              .Email.bold
+                = @reservation.email
+            .Item__user--contents--tel
+              .telHeader
+                %h5 電話番号
+              .Tel.bold
+                = Phonelib.parse(@reservation.tel, :jp).national
+
+        .Price
+          .Price__header.header
+            %h4 支払い想定金額
+          .Price__total
+            = render "reservations/create-priceTable"
+
+
+        .ReservationShow__link
+          = link_to :back, class: "back" do
+            戻る
+          = link_to root_path, class: "send" do
+            送信

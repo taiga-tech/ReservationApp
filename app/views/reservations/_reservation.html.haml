@@ -36,7 +36,7 @@
               .Item__menu--name.bold
                 = @reservation.menu.name
               .Item__menu--price.bold
-                = "¥#{@reservation.menu.price}(税別)"
+                = "¥#{@reservation.menu.price.to_s(:delimited)}(税別)"
     .Item__request
       .Item__request--header.header
         %h4 Request
@@ -69,22 +69,10 @@
 
     .Price
       .Price__header.header
-        %h4 支払い想定金額 (税込)
+        %h4 支払い想定金額
       .Price__total
-        %h2.bold
-          = "¥#{(@reservation.menu.price * (@tax + 1)).ceil} 〜"
-          %div
-            = "#{(@tax * 100).ceil}%"
-          %div
-            = "¥#{(@reservation.menu.price * @tax).ceil}"
-          %div
-            = "- ¥#{(@reservation.menu.price * 0.05).ceil}"
-          %div
-            = "¥#{((@reservation.menu.price * 0.95) * (@tax + 1)).ceil}"
-
+        = render "reservations/priceTable"
 
     .ReservationShow__link
-      = link_to :back, class: "back" do
-        戻る
-      = link_to root_path, class: "send" do
-        送信
+      = link_to reservations_path, class: "send" do
+        予約一覧へ戻る

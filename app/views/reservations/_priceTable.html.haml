@@ -1,0 +1,27 @@
+%table
+  %tbody
+    %tr
+      %th Menu
+      %th 税別
+      %th
+        ="値引額(#{ (@discount * 100).ceil }%)"
+      %th 値引後別
+      %th 消費税率
+      %th
+        消費税
+      %th 割引後込
+    %tr.color
+      %th
+        = @reservation.menu.name
+      %td
+        = "¥#{ @price.to_s(:delimited) }"
+      %td
+        = "- ¥#{ (@discountPrice).ceil.to_s(:delimited) }"
+      %td
+        = "¥#{ (@price - @discountPrice.ceil).to_s(:delimited) }"
+      %td
+        = "#{ (@tax * 100).ceil }%"
+      %td
+        = "¥#{ ((@price - @discountPrice.ceil) * @tax).ceil.to_s(:delimited) }"
+      %td
+        = "¥#{ ((@price - @discountPrice.ceil) * (@tax + 1)).ceil.to_s(:delimited) }"

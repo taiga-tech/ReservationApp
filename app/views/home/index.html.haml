@@ -15,7 +15,7 @@
               - menu.categories.each do |category|
                 = category.name
           .Menubox__right
-            = "¥#{menu.price}(税別)"
+            = "¥#{menu.price.to_s(:delimited)}(税別)"
 
   .Stylist.container
     .Stylist__header
