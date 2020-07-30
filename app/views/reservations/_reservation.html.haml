@@ -76,3 +76,5 @@
     .ReservationShow__link
       = link_to reservations_path, class: "send" do
         予約一覧へ戻る
+      = link_to reservation_path(@reservation), method: "delete", class: "send" do
+        予約を削除する

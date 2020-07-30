@@ -2,14 +2,13 @@
   %tbody
     %tr
       %th Menu
-      %th 税別
+      %th 価格
       %th
         ="値引額(#{ (@discount * 100).ceil }%)"
-      %th 値引後別
+      %th 小計
       %th 消費税率
-      %th
-        消費税
-      %th 割引後込
+      %th 消費税
+      %th 合計
     %tr.color
       %th
         = @reservation.menu.name

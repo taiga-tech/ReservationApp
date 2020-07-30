@@ -14,14 +14,26 @@
       .ReservationsIndex__Stylist
         %h2.ReservationsIndex__Stylist--header
           = stylist.name
+          = stylist.position
         .ReservationsIndex__Stylist--Reservations
           - stylist.reservations.each do |stylistreservation|
             .Reservation_Link
               = link_to reservation_path(stylistreservation) do
                 .Reservation__Link--name
-                  = stylistreservation.name
+                  = "#{stylistreservation.name}様"
                   = stylistreservation.menu.name
                   = stylistreservation.menu.price
                   .Reservation__Link--dateTime
                     = stylistreservation.date
                     = stylistreservation.time
+            -# - if @today.strftime("%F") == stylistreservation.date
+            -#   - if 10:00
+            -#     .Reservation_Link
+            -#       = link_to reservation_path(stylistreservation) do
+            -#         .Reservation__Link--name
+            -#           = "#{stylistreservation.name}様"
+            -#           = stylistreservation.menu.name
+            -#           = stylistreservation.menu.price
+            -#           .Reservation__Link--dateTime
+            -#             = stylistreservation.date
+            -#             = stylistreservation.time

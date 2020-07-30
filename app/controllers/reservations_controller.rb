@@ -2,13 +2,13 @@ class ReservationsController < ApplicationController
   before_action :authenticate_staff!, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :set_other, only: [:new, :create, :edit]
-  before_action :set_date, only: [:new, :create, :edit]
+  before_action :set_date, only: [:index, :new, :create, :edit]
   before_action :user_phone, only: [:show, :update]
   before_action :price_calculation, only: [:show, :update]
 
   def index
     @reservations = Reservation.all
-    @stylists = Stylist.all
+    @stylists = Stylist.all#.order(@reservations.date: :desc)
   end
 
   def new
@@ -29,7 +29,6 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    # @title = "show"
   end
 
   def edit
@@ -44,7 +43,9 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation.destroy
+    if @reservation.destroy
+      redirect_to reservations_path
+    end
   end
 
   private
