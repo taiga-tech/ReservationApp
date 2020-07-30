@@ -23,4 +23,5 @@ Things you may want to cover:
 
 * ...
 
-https://hairsalon-reserv.herokuapp.com/ 
+https://hairsalon-reserv.herokuapp.com/
+https://git.heroku.com/hairsalon-reserv.git
