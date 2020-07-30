@@ -97,14 +97,6 @@ ActiveRecord::Schema.define(version: 2020_07_29_151948) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.string "tel", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   add_foreign_key "menu_categories", "categories"
   add_foreign_key "menu_categories", "menus"
   add_foreign_key "reservations", "menus"
