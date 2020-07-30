@@ -1,0 +1,512 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.Reserv {
+  background-color: rgb(38, 43, 48);
+  color: #fff;
+  .ReservForm {
+    &__header {
+      border-bottom: 1px solid #fff;
+      margin: 30px 20px;
+    }
+    &__contents {
+      padding: 0 50px;
+      flex-direction: column;
+      .BTN {
+        border-radius: 10px;
+        text-align: center;
+        font-size: 50px;
+      }
+      .BTN:hover {
+        background-color: rgba(82, 95, 105, 0.5);
+      }
+      &--stylist {
+        height: calc(100vh - 150px);
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        .StylistHeader {
+          margin-bottom: 10px;
+        }
+        .StylistContents {
+          display: flex;
+          justify-content: space-between;
+          // align-items: center;
+          height: 100%;
+          &__Box {
+            text-align: center;
+            margin-top: 40px;
+            width: 242px;
+            height: auto;
+            &--Item {
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              margin: 10px;
+              &--label {
+                padding: 10px;
+                opacity: 0.7;
+                .Image {
+                  width: 200px;
+                  height: 200px;
+                  position: relative;
+                }
+                // .NamePlate {
+                //   position: absolute;
+                //   right: 0px;
+                //   bottom: 0px;
+                //   background-color: rgba(94, 120, 146, 0.3);
+                //   padding: 5px 15px;
+                //   color: #fff;
+                //   font-size: 17px;
+                //   font-weight: 900;
+                // }
+                .check {
+                  display: none;
+                }
+              }
+              &--label:hover {
+                background-color: rgba(82, 95, 105, 0.7);
+              }
+              .hidden {
+                display: none;
+              }
+              .hidden:checked + .StylistContents__Box--Item--label {
+                opacity: 1;
+                border: 1px solid #fff;
+                padding: 10px;
+                .check {
+                  display: block;
+                  z-index: 1;
+                  position: absolute;
+                  top: 0;
+                  right: 15px;
+                  color: #fff;
+                  font-size: 50px;
+                }
+              }
+            }
+            &--info {
+              .Info {
+                display: flex;
+                // justify-content: space-between;
+                align-items: flex-end;
+                padding: 0 20px;
+                &__name {
+                  font-size: 20px;
+                }
+                &__position {
+                  margin-left: 5px;
+                }
+              }
+              .comment {
+                text-align: left;
+                margin: 10px;
+              }
+            }
+          }
+
+        }
+      }
+
+      &--menu {
+        padding-top: 50px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        .MenuHeader {
+          margin: 30px 0;
+        }
+        .MenuContents {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          &__Box {
+            width: 50%;
+            padding: 10px;
+            &--Item {
+              &--label {
+                width: 100%;
+                padding: 10px;
+                position: relative;
+                .Item {
+                  &__top {
+                    display: flex;
+                    justify-content: space-between;
+                  }
+                }
+                .check {
+                  display: none;
+                }
+              }
+              .hidden {
+                display: none;
+              }
+              input:checked + .MenuContents__Box--Item--label {
+                border: 1px solid #fff;
+                .check {
+                  display: block;
+                  font-size: 35px;
+                  position: absolute;
+                  top: 0;
+                  right: 35%;
+                }
+              }
+            }
+          }
+          &__Box:hover {
+            background-color: rgba(53, 61, 68, 0.6);
+          }
+        }
+      }
+
+      &--date {
+        padding-top: 50px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        .DateHeader {
+          padding: 30px 0;
+        }
+        .DateContents {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          .Calendar {
+            Table {
+              text-align: center;
+              th, td{
+                padding: 10px;
+              }
+              td:hover {
+              background-color: rgba(82, 95, 105, 0.5);
+              }
+              .Sun:hover {
+                // background-color: rgba(219, 111, 111, 0.7);
+                background-color: rgba(220, 90, 170, 0.6);
+              }
+              .TableHeader {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+              }
+              .Sun {
+                background-color: rgba(220, 90, 170, 0.5);
+              }
+              .Sat {
+                background-color: rgba(100, 180, 230, 0.5);
+              }
+              .Sat:hover {
+                // background-color: rgba(63, 192, 224, 0.7);
+                background-color: rgba(100, 180, 230, 0.7);
+              }
+              .Time {
+                width: 300px;
+              }
+              .Color {
+                background-color: rgb(53, 61, 68);
+              }
+              .Status {
+                font-weight: 900;
+              }
+              .check {
+                display: none;
+                color: #fff;
+                font-size: 18px;
+              }
+              .Calendar__select {
+                input:checked + .Status {
+                  border: 1px solid rgba(255, 255, 255, 0.9);
+                  padding: 4px 0;
+                  .check {
+                    display: block;
+                  }
+                  .Status__value {
+                    display: none;
+                  }
+                }
+              }
+              input {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      &--user {
+        padding-top: 50px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        .UserHeader {
+          margin: 30px 0;
+        }
+        .UserContents {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 40px 30px;
+          height: 100%;
+          .ItemTitle {
+            margin-bottom: 15px;
+          }
+          .field {
+            width: 60%;
+            height: 40px;
+            font-size: 20px;
+            padding: 0 20px;
+            color: #fff;
+            background-color: rgba(43, 49, 54, 0.8);
+            border: none;
+            resize: none;
+            outline: none;
+          }
+          .area {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 20px;
+            color: #fff;
+            background-color: rgba(43, 49, 54, 0.8);
+            border: none;
+            resize: none;
+            outline: none;
+          }
+          .hidden {
+            display: none;
+          }
+          &__request {
+            .Request {
+              &__text {
+                position: relative;
+                .imageicon {
+                  font-size: 30px;
+                  position: absolute;
+                  bottom: 5px;
+                  right: 5px;
+                  padding: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.ReservationShow {
+  color: #fff;
+  &__Item {
+    // border:1px solid #fff;
+    padding-top: 10px;
+    padding: 20px;
+    .header {
+      // width: 25%;
+      margin: 70px 0px 50px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      text-align: center;
+    }
+    .bold {
+      font-weight: 900;
+    }
+    .Item {
+      // height: calc(100vh - 100px);
+      display: flex;
+      // justify-content: space-between;
+      flex-direction: column;
+      &__dateTime {
+        &--contents {
+          display: flex;
+          justify-content: center;
+        }
+        &--content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100px;
+          width: 80%;
+          padding: 10px;
+          &--date, &--time {
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+      &__stylistMenu {
+        &--contents {
+          display: flex;
+          justify-content: space-around;
+          .stylist {
+            width: 50%;
+            &__name {
+              display: flex;
+              padding: 20px;
+              .content {
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                width: 220px;
+                height: 270px;
+                padding: 10px;
+                img {
+                  width: 200px;
+                  height: 200px;
+                }
+                .position {
+                  font-size: small;
+                  opacity: 0.7;
+                }
+              }
+            }
+          }
+          .Menu {
+            width: 50%;
+            .Item__menu {
+              &--contents {
+                padding: 0 10px;
+                display: flex;
+                justify-content: space-between;
+              }
+            }
+          }
+        }
+      }
+      &__request {
+        &--contents {
+          display: flex;
+          &--text {
+            width: 70%;
+            margin: 10px;
+            overflow-wrap: break-word;
+            .requestContent {
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              background-color: rgba(43, 49, 54, 0.8);
+              height:  250px;
+              padding: 10px 20px;
+              font-size: 20px;
+            }
+          }
+          &--image {
+            width: 25%;
+            margin: 10px;
+            img {
+              width: 250px;
+              height: 250px;
+              padding: 10px;
+              border: 1px solid rgba(255, 255, 255, 0.4);
+            }
+          }
+        }
+      }
+      &__user {
+        &--contents {
+          padding: 0 20px;
+          height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          &--name, &--email, &--tel {
+            margin: 0 50px;
+            padding: 0 15px;
+            // width: 80%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+      .Price {
+        height: 200px;
+        &__total {
+          font-size: 20px;
+          display: flex;
+          justify-content: center;
+          th {
+            text-align: left;
+            padding: 10px 20px;
+          }
+          td {
+            text-align: right;
+            padding: 20px 20px;
+          }
+          .color {
+            background-color: rgba(43, 49, 54, 0.8);
+
+          }
+        }
+      }
+    }
+  }
+  &__link {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    a {
+      color: #fff;
+      text-decoration: none;
+      // border: 1px solid rgba(255, 255, 255, 0.027);
+      display: block;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 20px;
+    }
+    .back:hover {
+      background-color: rgba(255, 30, 41, 0.4);
+    }
+    .send:hover {
+      background-color: rgba(100, 180, 230, 0.4);
+    }
+  }
+}
+
+// index
+.ReservContainer {
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .ReservationsIndex {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    // width: 100vw;
+    height: 100%;
+    // overflow-x: scroll;
+    &__Stylist {
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 400px;
+      height: 100%;
+      padding: 30px 20px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      &--header {
+        padding-bottom: 20px;
+      }
+      &--Reservations {
+        height: 100%;
+        overflow-y: scroll;
+        .Reservation_Link {
+          background-color: rgba(82, 95, 105, 0.5);
+          border: 1px solid rgb(0, 43, 77);
+          border-radius: 5px;
+          padding: 5px;
+          margin: 5px;
+        }
+      }
+    }
+  }
+  .NewBtn {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 60px;
+    color: #fff;
+    .NewReservation, .NewStylist {
+      padding: 20px;
+    }
+  }
+}

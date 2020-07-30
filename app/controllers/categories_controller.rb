@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_staff!
   before_action :set_category, only: [:edit, :update, :destroy]
 
   def index
@@ -39,7 +40,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:categories).permit(:name)
+    params.require(:category).permit(:name)
   end
-
 end

@@ -1,0 +1,75 @@
+%header
+  = render "layouts/header"
+
+.Main
+  .Menu.container
+    .Menu__header
+      %h4 Menu
+    .Menu__contents
+      - @menus.each do |menu|
+        .Menubox
+          .Menubox__left
+            .Menubox__left--name
+              = menu.name
+            .Menubox__left--category
+              - menu.categories.each do |category|
+                = category.name
+          .Menubox__right
+            = "¥#{menu.price.to_s(:delimited)}(税別)"
+
+  .Stylist.container
+    .Stylist__header
+      %h4 Stylist
+    .Stylist__contents
+      - @stylists.each do |stylist|
+        .Stylist__contents--item
+          = link_to stylist_path(stylist) do
+            .Item__image
+              = image_tag stylist.image.url if stylist.image.present?
+            .Item__name
+              = stylist.name
+            .Item__position
+              = stylist.position
+
+  .Gallery.container
+    .Gallery__header
+      %h4 Gallery
+    .Gallery__contents
+      .Gallery__contents--item
+        - @galleries.each do |gallery|
+          = image_tag gallery.image.url
+
+  .NewsReservation.container
+    .News
+      .News__header
+        %h4 News
+      .News__contents
+        -# モデル作成する
+        .News__contents--item
+          .Item__content
+            ネット予約はじめました!!
+            %br/
+            = "今ならネット予約すると合計金額から#{(@discount * 100).ceil}%OFF!!!"
+          .Item__date
+            = Date.today
+
+    .Reservation
+      .Reservation__header
+        %h4 Reservation
+      .Reservation__contents
+        -# ボタンデザインどうにかする
+        = link_to "tel:#{@info.tel}", class: "Reservation__contents--Btn" do
+          電話予約
+        = link_to new_reservation_path, class: "Reservation__contents--Btn" do
+          ネット予約
+      .Reservation__modal
+
+  .Acsess
+    .Acsess__header.container
+      %h4 Acsess
+    .Acsess__contents
+      .Acsess__contents--gmap
+        %h1 GoogleMapApi
+
+%footer
+  = render "layouts/footer"

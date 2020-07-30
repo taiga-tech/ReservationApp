@@ -1,0 +1,39 @@
+%header
+  = render "layouts/management-header"
+.ReservContainer
+  -# .NewBtn
+  -#   .NewReservation
+  -#     = link_to new_reservation_path do
+  -#       = icon("far", "calendar-plus")
+  -#   .NewStylist
+  -#     = link_to new_stylist_path do
+  -#       = icon("fas", "user-plus")
+
+  .ReservationsIndex
+    - @stylists.each do |stylist|
+      .ReservationsIndex__Stylist
+        %h2.ReservationsIndex__Stylist--header
+          = stylist.name
+          = stylist.position
+        .ReservationsIndex__Stylist--Reservations
+          - stylist.reservations.each do |stylistreservation|
+            .Reservation_Link
+              = link_to reservation_path(stylistreservation) do
+                .Reservation__Link--name
+                  = "#{stylistreservation.name}様"
+                  = stylistreservation.menu.name
+                  = stylistreservation.menu.price
+                  .Reservation__Link--dateTime
+                    = stylistreservation.date
+                    = stylistreservation.time
+            -# - if @today.strftime("%F") == stylistreservation.date
+            -#   - if 10:00
+            -#     .Reservation_Link
+            -#       = link_to reservation_path(stylistreservation) do
+            -#         .Reservation__Link--name
+            -#           = "#{stylistreservation.name}様"
+            -#           = stylistreservation.menu.name
+            -#           = stylistreservation.menu.price
+            -#           .Reservation__Link--dateTime
+            -#             = stylistreservation.date
+            -#             = stylistreservation.time

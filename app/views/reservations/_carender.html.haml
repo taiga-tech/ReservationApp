@@ -1,0 +1,679 @@
+.Calendar
+  %table
+    %tbody
+      %tr.TableHeader
+        %th.Time 時間
+        %th{class: "#{@week.strftime("%a")}"}
+          = @today.strftime("%m/%d (%a)")
+        %th{class: "#{@week.days_since(1).strftime("%a")}"}
+          = @today.days_since(1).strftime("%m/%d (%a)")
+        %th{class: "#{@week.days_since(2).strftime("%a")}"}
+          = @today.days_since(2).strftime("%m/%d (%a)")
+        %th{class: "#{@week.days_since(3).strftime("%a")}"}
+          = @today.days_since(3).strftime("%m/%d (%a)")
+        %th{class: "#{@week.days_since(4).strftime("%a")}"}
+          = @today.days_since(4).strftime("%m/%d (%a)")
+        %th{class: "#{@week.days_since(5).strftime("%a")}"}
+          = @today.days_since(5).strftime("%m/%d (%a)")
+        %th{class: "#{@week.days_since(6).strftime("%a")}"}
+          = @today.days_since(6).strftime("%m/%d (%a)")
+      %tr
+        %th.Time
+          10:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_10:00"
+          = radio_button_tag "reservation[time]", "10:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}", class: "selectBtn" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_10:00" do
+          = radio_button_tag "reservation[time]", "10:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_10:00" do
+          = radio_button_tag "reservation[time]", "10:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_10:00" do
+          = radio_button_tag "reservation[time]", "10:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_10:00" do
+          = radio_button_tag "reservation[time]", "10:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_10:00" do
+          = radio_button_tag "reservation[time]", "10:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_10:00" do
+          = radio_button_tag "reservation[time]", "10:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr.Color
+        %th.Time
+          11:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_11:00" do
+          = radio_button_tag "reservation[time]", "11:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_11:00" do
+          = radio_button_tag "reservation[time]", "11:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_11:00" do
+          = radio_button_tag "reservation[time]", "11:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_11:00" do
+          = radio_button_tag "reservation[time]", "11:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_11:00" do
+          = radio_button_tag "reservation[time]", "11:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_11:00" do
+          = radio_button_tag "reservation[time]", "11:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_11:00" do
+          = radio_button_tag "reservation[time]", "11:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr
+        %th.Time
+          12:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_12:00" do
+          = radio_button_tag "reservation[time]", "12:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_12:00" do
+          = radio_button_tag "reservation[time]", "12:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_12:00" do
+          = radio_button_tag "reservation[time]", "12:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_12:00" do
+          = radio_button_tag "reservation[time]", "12:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_12:00" do
+          = radio_button_tag "reservation[time]", "12:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_12:00" do
+          = radio_button_tag "reservation[time]", "12:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_12:00" do
+          = radio_button_tag "reservation[time]", "12:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr.Color
+        %th.Time
+          13:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_13:00" do
+          = radio_button_tag "reservation[time]", "13:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_13:00" do
+          = radio_button_tag "reservation[time]", "13:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_13:00" do
+          = radio_button_tag "reservation[time]", "13:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_13:00" do
+          = radio_button_tag "reservation[time]", "13:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_13:00" do
+          = radio_button_tag "reservation[time]", "13:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_13:00" do
+          = radio_button_tag "reservation[time]", "13:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_13:00" do
+          = radio_button_tag "reservation[time]", "13:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr
+        %th.Time
+          14:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_14:00" do
+          = radio_button_tag "reservation[time]", "14:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_14:00" do
+          = radio_button_tag "reservation[time]", "14:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_14:00" do
+          = radio_button_tag "reservation[time]", "14:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_14:00" do
+          = radio_button_tag "reservation[time]", "14:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_14:00" do
+          = radio_button_tag "reservation[time]", "14:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_14:00" do
+          = radio_button_tag "reservation[time]", "14:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_14:00" do
+          = radio_button_tag "reservation[time]", "14:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr.Color
+        %th.Time
+          15:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_15:00" do
+          = radio_button_tag "reservation[time]", "15:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_15:00" do
+          = radio_button_tag "reservation[time]", "15:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_15:00" do
+          = radio_button_tag "reservation[time]", "15:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_15:00" do
+          = radio_button_tag "reservation[time]", "15:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_15:00" do
+          = radio_button_tag "reservation[time]", "15:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_15:00" do
+          = radio_button_tag "reservation[time]", "15:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_15:00" do
+          = radio_button_tag "reservation[time]", "15:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr
+        %th.Time
+          16:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_16:00" do
+          = radio_button_tag "reservation[time]", "16:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_16:00" do
+          = radio_button_tag "reservation[time]", "16:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_16:00" do
+          = radio_button_tag "reservation[time]", "16:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_16:00" do
+          = radio_button_tag "reservation[time]", "16:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_16:00" do
+          = radio_button_tag "reservation[time]", "16:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_16:00" do
+          = radio_button_tag "reservation[time]", "16:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_16:00" do
+          = radio_button_tag "reservation[time]", "16:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr.Color
+        %th.Time
+          17:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_17:00" do
+          = radio_button_tag "reservation[time]", "17:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_17:00" do
+          = radio_button_tag "reservation[time]", "17:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_17:00" do
+          = radio_button_tag "reservation[time]", "17:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_17:00" do
+          = radio_button_tag "reservation[time]", "17:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_17:00" do
+          = radio_button_tag "reservation[time]", "17:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_17:00" do
+          = radio_button_tag "reservation[time]", "17:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_17:00" do
+          = radio_button_tag "reservation[time]", "17:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr
+        %th.Time
+          18:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_18:00" do
+          = radio_button_tag "reservation[time]", "18:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_18:00" do
+          = radio_button_tag "reservation[time]", "18:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_18:00" do
+          = radio_button_tag "reservation[time]", "18:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_18:00" do
+          = radio_button_tag "reservation[time]", "18:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_18:00" do
+          = radio_button_tag "reservation[time]", "18:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_18:00" do
+          = radio_button_tag "reservation[time]", "18:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_18:00" do
+          = radio_button_tag "reservation[time]", "18:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+      %tr.Color.NineTeeen
+        %th.Time
+          19:00
+        %td{class: "#{@week.strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_19:00" do
+          = radio_button_tag "reservation[time]", "19:00"
+          -# = label_tag "reservation_date_#{@date.strftime("%F")}" do
+          = radio_button_tag "reservation[date]", "#{@date.strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(1).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_19:00" do
+          = radio_button_tag "reservation[time]", "19:00"
+          -# = label_tag "reservation_date_#{@date.days_since(1).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(1).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(2).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_19:00" do
+          = radio_button_tag "reservation[time]", "19:00"
+          -# = label_tag "reservation_date_#{@date.days_since(2).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(2).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(3).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_19:00" do
+          = radio_button_tag "reservation[time]", "19:00"
+          -# = label_tag "reservation_date_#{@date.days_since(3).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(3).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(4).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_19:00" do
+          = radio_button_tag "reservation[time]", "19:00"
+          -# = label_tag "reservation_date_#{@date.days_since(4).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(4).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(5).strftime("%a")} Calendar__select"}
+          -# = label_tag "reservation_time_19:00" do
+          = radio_button_tag "reservation[time]", "19:00"
+          -# = label_tag "reservation_date_#{@date.days_since(5).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(5).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")
+        %td{class: "#{@week.days_since(6).strftime("%a") } Calendar__select"}
+          -# = label_tag "reservation_time_19:00" do
+          = radio_button_tag "reservation[time]", "19:00"
+          -# = label_tag "reservation_date_#{@date.days_since(6).strftime("%F")}" do
+          = radio_button_tag  "reservation[date]", "#{@date.days_since(6).strftime("%F")}"
+          .Status
+            %span.Status__value
+            %span.check
+              = icon("far", "check-square")

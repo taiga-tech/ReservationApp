@@ -1,0 +1,93 @@
+-# ajaxで実装する
+= form_with model: @reservation, local: true, class: "ReservForm__contents" do |f|
+  -# = hidden_field_tag :authenticity_token, form_authenticity_token
+  .ReservForm__contents--stylist
+    .StylistHeader
+      %h4 Stylist Select
+    .StylistContents
+      - @stylists.each do |stylist|
+        .StylistContents__Box
+          .StylistContents__Box--Item
+            = f.radio_button :stylist_id, "#{stylist.id}", class: "hidden"
+            = f.label :"stylist_id_#{stylist.id}", class: "StylistContents__Box--Item--label" do
+              = image_tag stylist.image_url, class: "Image"
+              %span.check
+                = icon("fas", "check")
+          .StylistContents__Box--info
+            .Info
+              .Info__name
+                = stylist.name
+              .Info__position
+                = stylist.position
+            .comment
+              = stylist.comment
+
+    .BTN.MENU.next
+      = icon("fas", "chevron-down")
+
+  .ReservForm__contents--menu
+    .MenuHeader
+      %h4 Menu select
+    .MenuContents
+      - @menus.each do |menu|
+        .MenuContents__Box
+          .MenuContents__Box--Item
+            = f.radio_button :menu_id, "#{menu.id}", class: "hidden"
+            = f.label :"menu_id_#{menu.id}", class: "MenuContents__Box--Item--label" do
+              .Item
+                .Item__top
+                  .Item__top--name
+                    = menu.name
+                  .Item__top--price
+                    = "¥#{menu.price}(税抜)"
+              .Item__buttom
+                - menu.categories.each do |category|
+                  = category.name
+              %span.check
+                = icon("fas", "check")
+
+    .BTN.DATE.next
+      = icon("fas", "chevron-down")
+
+  .ReservForm__contents--date
+    .DateHeader
+      %h4 Date select
+    .DateContents
+      = render "reservations/carender"
+
+
+    .BTN.USER.next
+      = icon("fas", "chevron-down")
+
+  .ReservForm__contents--user
+    .UserHeader
+      %h4 お客様情報
+    .UserContents
+      .UserContents__name
+        .ItemTitle
+          = f.label :name do
+            %h5 お名前 *
+        = f.text_field :name, class: "field"
+      .UserContents__email
+        .ItemTitle
+          = f.label :email do
+            %h5 メールアドレス *
+        = f.email_field :email, class: "field"
+      .UserContents__tel
+        .ItemTitle
+          = f.label :tel do
+            %h5 電話番号 *
+        = f.telephone_field :tel, class: "field"
+      .UserContents__request
+        .Request
+          .Request__text
+            .ItemTitle
+              = f.label :request do
+                %h5 ご要望
+            = f.text_area :request, class: "area", rows: "5"
+            = f.label :image, class: "imageicon" do
+              = icon("fas", "images", class: "imageicon")
+            = f.file_field :image, class: "hidden"
+
+      .ReservForm__contents--submit
+        = f.submit "入力確認画面へ"

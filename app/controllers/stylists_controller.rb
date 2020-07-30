@@ -1,8 +1,13 @@
 class StylistsController < ApplicationController
+  before_action :authenticate_staff!, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :set_stylist, only: [:show, :edit, :update, :destroy]
 
   def index
     @stylists = Stylist.all
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def show
@@ -45,6 +50,6 @@ class StylistsController < ApplicationController
   end
 
   def stylist_params
-    params.require(:stylist).permit(:name, :comment, :image)
+    params.require(:stylist).permit(:name, :position, :comment, :image)
   end
 end

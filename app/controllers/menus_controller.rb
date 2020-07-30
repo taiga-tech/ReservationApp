@@ -1,8 +1,11 @@
 class MenusController < ApplicationController
+  before_action :authenticate_staff!
   before_action :set_menu, only: [:show, :edit, :update]
+  before_action :new_title, only: [:new, :create]
   # before_action :tax_include, only: [:show]
 
   def index
+    @title = "メニュー一覧"
     @menus = Menu.all
   end
 
@@ -13,7 +16,7 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     if @menu.save
-      redirect_to menu_path(@menu.id)
+      redirect_to menu_path(@menu)
     else
       render :new
     end
@@ -23,10 +26,12 @@ class MenusController < ApplicationController
   end
 
   def edit
+    @title = "メニュー編集画面"
     # taxも編集できるようにする
   end
 
   def update
+    @title = "メニュー編集画面"
     if @menu.update(menu_params)
       redirect_to menu_path(set_menu)
     else
@@ -46,6 +51,10 @@ class MenusController < ApplicationController
 
   def tax_include
     @tax_price = (@menu.price + @menu.price * @tax).ceil
+  end
+
+  def new_title
+    @title = "メニュー追加画面"
   end
 
   # def tax_include_index

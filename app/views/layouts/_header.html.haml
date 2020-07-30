@@ -2,20 +2,23 @@
   .Header__Container
     .Header__Container--Title
       .outLine
-        hub
+        Hair salon
     %ul.Header__Container--List#List
-      %li.Link
-        = link_to "#"  do
+      %li.Link#Top
+        = link_to root_path  do
           Top
-      %li.Link
-        = link_to "#"  do
+      %li.Link#Menu
+        = link_to "#" do
           Menu
-      %li.Link
-        = link_to "#"  do
+      %li.Link#News
+        = link_to "#" do
+          News
+      %li.Link#Reserv
+        = link_to new_reservation_path  do
           Resevation
-      %li.Link
+      %li.Link#Acsess
         = link_to "#"  do
-          Contact
-      %li.Link
+          Acsess
+      %li.Link#Sns
         = link_to "#"  do
           = icon("fab", "instagram", class: "instagram")

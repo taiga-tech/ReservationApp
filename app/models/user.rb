@@ -1,5 +1,5 @@
-class User < ApplicationRecord
-  validates :name, :email, :tel, presence: true
+# class User < ApplicationRecord
+#   has_one :reservation
 
-  mount_uploader :image, ImagesUploader
-end
+#   validates :name, :email, :tel, presence: true
+# end

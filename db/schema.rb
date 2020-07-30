@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_090605) do
+ActiveRecord::Schema.define(version: 2020_07_29_151948) do
+
+  create_table "calculations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.float "tax", null: false
+    t.float "discount", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -52,8 +59,40 @@ ActiveRecord::Schema.define(version: 2020_07_17_090605) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "taxes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.float "tax", null: false
+  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "tel", null: false
+    t.string "date", null: false
+    t.string "time", null: false
+    t.text "request"
+    t.string "image"
+    t.bigint "menu_id"
+    t.bigint "stylist_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id"], name: "index_reservations_on_menu_id"
+    t.index ["stylist_id"], name: "index_reservations_on_stylist_id"
+  end
+
+  create_table "staffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_staffs_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_staffs_on_reset_password_token", unique: true
+  end
+
+  create_table "stylists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "position", null: false
+    t.text "comment"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,12 +101,12 @@ ActiveRecord::Schema.define(version: 2020_07_17_090605) do
     t.string "name", null: false
     t.string "email", null: false
     t.string "tel", null: false
-    t.text "request"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "menu_categories", "categories"
   add_foreign_key "menu_categories", "menus"
+  add_foreign_key "reservations", "menus"
+  add_foreign_key "reservations", "stylists"
 end

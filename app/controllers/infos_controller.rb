@@ -1,10 +1,10 @@
 class InfosController < ApplicationController
-  before_action :set_info, only: [:index, :show, :edit, :update]
-  before_action :phone_num, only: [:index, :show]
+  before_action :authenticate_staff!
+  # before_action :set_info, only: [:show, :edit, :update]
 
-  def index
-    @title = "管理画面"
-  end
+  # def index
+  #   @title = "管理画面"
+  # end
 
   def show
   end
@@ -26,11 +26,11 @@ class InfosController < ApplicationController
     params.require(:info).permit(:code, :address, :tel, :weekday, :weekend, :holiday)
   end
 
-  def set_info
-    @info = Info.find(1)
-  end
+  # def set_info
+  #   @info = Info.find(1)
+  # end
 
-  def phone_num
-    @phone = Phonelib.parse(@info.tel, :jp).national
-  end
+  # def phone_num
+  #   @phone = Phonelib.parse(@info.tel, :jp).national
+  # end
 end

@@ -1,13 +1,37 @@
-%div
-  = @menu.name
-%div
-  = @menu.price
-%div
-  = @tax_price
-%div
-  = "#{(@tax * 100).ceil}%"
-%div
-  = @menu.comment
-%div
-  - @menu.categories.each do |category|
-    = category.name
+%header
+  = render "layouts/management-header"
+.Update
+  .card
+    .alert.alert-secondary
+      編集内容を確認してください
+    %h3.card-header
+      name
+    .card-body
+      %h4.card-title
+        = @menu.name
+    %h3.card-header
+      category
+    .card-body
+      %h4.card-title
+        - @menu.categories.each do |category|
+          = category.name
+    %h3.card-header
+      comment
+    .card-body
+      %h4.card-title
+        = @menu.comment
+    %h3.card-header
+      price
+    .card-body
+      %h4.card-title
+        = "¥#{@menu.price}"
+    %h3.card-header
+      total (tax)
+    .card-body
+      %h4.card-title
+        = "¥#{(@menu.price + @menu.price * @tax).ceil} (#{(@tax * 100).ceil}%)"
+    .Btn
+      = link_to edit_menu_path(@menu), class: "btn btn-outline-danger check" do
+        編集画面
+      = link_to menus_path, class: "btn btn-outline-info check" do
+        メニュー一覧へ戻る

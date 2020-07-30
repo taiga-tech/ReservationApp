@@ -1,0 +1,15 @@
+%header
+  = render "layouts/management-header"
+.Form
+  .card
+    %h1.card-header 消費税率・値引率編集
+    = form_with model: @calculation, class: "card-body", local: true  do |f|
+      .form-group.card-title
+        = f.label :tax do
+          消費税
+        = f.text_field :tax, class: "form-control"
+      .form-group
+        = f.label :discount do
+          割引率
+        = f.text_field :discount, class: "form-control"
+      = f.submit "送信", class: "btn btn-outline-info"

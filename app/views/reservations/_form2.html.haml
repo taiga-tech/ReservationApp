@@ -1,0 +1,48 @@
+-# -# ajaxで実装する
+-# = form_with model: @reservation, local: true, class: "ReservForm__contents" do |f|
+-#   .ReservForm__contents--stylist
+-#     .StylistHeader
+-#       %h4 Stylist Select
+-#     .StylistContents
+-#       - @stylists.each do |stylist|
+-#         = f.collection_radio_buttons :stylist_id, Stylist.all, :id, :name do |b|
+-#           -# %label.StylistContents__item
+-#             -# = image_tag b.text, class: "StylistContents__item--image click", id: "#{b.text}"
+-#           %span.NameModal.StylistContents__item--image
+-#             = b.label class: "StylistContents__item click", id: "#{b.text}" do
+-#               = image_tag stylist.image_url
+-#             = b.radio_button
+-#   -# %button.Btn#stylist 次へ
+-#   -# .ReservForm__contents--date
+-#   -#   = f.label :date do
+-#   -#     予約日
+-#   -#   = f.date_field :date
+-#   -# .ReservForm__contents--date
+-#   -#   = f.label :time do
+-#   -#     予約時間
+-#   -#   = f.time_field :time
+-#   -# %button.Btn 次へ
+-#   -# .ReservForm__contents--menu
+-#   -#   = f.label :menu_ids do
+-#   -#     menu
+-#   -#   = f.collection_radio_buttons :menu_id, Menu.all, :id, :name
+-#   -# %button.Btn 次へ
+-#   -# .ReservForm__contents--user
+-#   -#   = f.label :name
+-#   -#   = f.text_field :name
+-#   -# .ReservForm__contents--user
+-#   -#   = f.label :email
+-#   -#   = f.text_field :email
+-#   -# .ReservForm__contents--user
+-#   -#   = f.label :tel
+-#   -#   = f.telephone_field :tel
+-#   -# .ReservForm__contents--request
+-#   -#   = f.label :request do
+-#   -#     request
+-#   -#   = f.text_area :request
+-#   -# .ReservForm__contents--request
+-#   -#   = f.label :image do
+-#   -#     image
+-#   -#   = f.file_field :image
+-#   -# .ReservForm__contents--submit
+-#   -#   = f.submit "送信"

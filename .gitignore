@@ -36,3 +36,5 @@ yarn-debug.log*
 .yarn-integrity
 /public/images
 /public/uploads
+/.evn
+/config/initializers/geocoder.rb

@@ -1,4 +1,5 @@
 class GalleriesController < ApplicationController
+  before_action :authenticate_staff!
   before_action :set_gallery, only: [:destroy]
 
   def index
