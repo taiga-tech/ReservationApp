@@ -202,11 +202,13 @@
     &__contents {
       margin-top: 30px;
       &--gmap {
-        background-color: #fff;
-        color: #000;
-        opacity: 0.2;
+        background-color: rgb(54, 60, 66);
         width: 100%;
         height: 60vh;
+        opacity: 0.5;
+      }
+      &--gmap:hover {
+        opacity: 1;
       }
     }
   }

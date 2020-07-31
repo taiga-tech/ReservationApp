@@ -1,7 +1,23 @@
 footer {
   width: 100vw;
   .footer {
+    color: #fff;
     background-color: rgb(53, 67, 82);
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__nav {
+      &--header {
+        font-family: "Shadows Into Light", cursive;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      &--list {
+        .List {
+          text-align: center;
+        }
+      }
+    }
   }
 }

@@ -1,18 +1,20 @@
 .footer
   %nav.footer__nav
+    .footer__nav--header
+      %h1 Hair salon
     .footer__nav--list
-      %ul
-        %li
-          = @info.code
-        %li
-          = @info.address
-        %li
+      .List
+        .List__address
+          = "〒#{@info.code}"
+          = "#{@info.address}"
+        .List__tel
           = link_to "tel:#{@info.tel}" do
             = icon("fas", "phone-square-alt")
             = @phone
-        %li
-          = @info.weekday
-        %li
-          = @info.weekend
-        %li
-          = @info.holiday
+        .List__info
+          .List__info--weekday
+            = "火曜日〜土曜日 #{@info.weekday}"
+          .List__info--weekend
+            = "日曜日 #{@info.weekend}"
+          .List__info--holiday
+            = "定休日 #{@info.holiday}"
