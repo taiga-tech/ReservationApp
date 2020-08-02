@@ -17,12 +17,13 @@
         border-radius: 10px;
         text-align: center;
         font-size: 50px;
+        margin: 30px;
       }
       .BTN:hover {
         background-color: rgba(82, 95, 105, 0.5);
       }
       &--stylist {
-        height: calc(100vh - 150px);
+        // height: calc(100vh - 150px);
         display: flex;
         justify-content: space-around;
         flex-direction: column;
@@ -31,9 +32,8 @@
         }
         .StylistContents {
           display: flex;
-          justify-content: space-between;
-          // align-items: center;
-          height: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
           &__Box {
             text-align: center;
             margin-top: 40px;
@@ -112,7 +112,7 @@
 
       &--menu {
         padding-top: 50px;
-        height: 100vh;
+        // height: 100vh;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
@@ -120,7 +120,6 @@
           margin: 30px 0;
         }
         .MenuContents {
-          height: 100%;
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
@@ -165,7 +164,7 @@
 
       &--date {
         padding-top: 50px;
-        height: 100vh;
+        // height: 100vh;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
@@ -173,7 +172,7 @@
           padding: 30px 0;
         }
         .DateContents {
-          height: 100%;
+          // height: 100%;
           display: flex;
           align-items: center;
           .Calendar {
@@ -238,7 +237,8 @@
 
       &--user {
         padding-top: 50px;
-        height: 100vh;
+        margin-bottom: 50px;
+        // height: 100vh;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
@@ -248,9 +248,9 @@
         .UserContents {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          // justify-content: space-between;
           padding: 40px 30px;
-          height: 100%;
+          // height: 100%;
           .ItemTitle {
             margin-bottom: 15px;
           }
@@ -292,6 +292,20 @@
               }
             }
           }
+        }
+      }
+      &--submit {
+        text-align: right;
+        .send {
+          font-weight: 900;
+          color: #fff;
+          background: rgb(38, 43, 48);
+          padding: 10px;
+          font-size: 1.2em;
+          border:none;
+        }
+        .send:hover {
+          background: rgb(52, 59, 66);
         }
       }
     }
