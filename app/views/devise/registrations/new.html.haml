@@ -1,27 +1,29 @@
-.Devise.container
-  %h1 Staff Only
-  %h2 Sign up
+.Devise.form
+  .Devise__header
+    %h1 STAFF ONLY
+    -# %h2 SIGN UP
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
-    .field
-      = f.label :name
-      %br/
-      = f.text_field :name, autofocus: true
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
+    .field.text-input
+      -# = f.label :name do
+      -#   STAFF NAME
+      = f.text_field :name, autofocus: true, placeholder: "STAFF NAME"
+      %span.separator
+    .field.text-input
+      -# = f.label :email
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "EMAIL"
+      %span.separator
+    .field.text-input
+      -# = f.label :password
       - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .actions
+        -# %em
+        -#   (#{@minimum_password_length} characters minimum)
+      = f.password_field :password, autocomplete: "new-password", placeholder: "PASSWORD #{@minimum_password_length} characters minimum"
+      %span.separator
+    .field.text-input
+      -# = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "ONE MORE PASSWORD"
+      %span.separator
+    .actions.form-bottom
       = f.submit "Sign up"
   = render "devise/shared/links"

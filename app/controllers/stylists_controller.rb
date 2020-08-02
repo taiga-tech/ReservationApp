@@ -1,38 +1,40 @@
 class StylistsController < ApplicationController
-  before_action :authenticate_staff!, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :authenticate_staff!
   before_action :set_stylist, only: [:show, :edit, :update, :destroy]
 
   def index
-    @stylists = Stylist.all
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @stylists = Stylist.where.not(name: "No Select")
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end
   end
 
   def show
   end
 
   def new
+    @title = "新規スタイリスト登録"
     @stylist = Stylist.new
   end
 
   def create
-    # default imageを設定する
+    @title = "新規スタイリスト登録"
     @stylist = Stylist.new(stylist_params)
     if @stylist.save
-      redirect_to stylists_path
+      redirect_to stylist_path(@stylist)
     else
       render :new
     end
   end
 
   def edit
+    @title = "スタイリスト情報編集"
   end
 
   def update
     if @stylist.update(stylist_params)
-      redirect_to stylists_path
+      redirect_to stylist_path(@stylist)
     else
       render :edit
     end

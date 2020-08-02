@@ -31,7 +31,9 @@
       %h4.card-title
         = "¥#{(@menu.price + @menu.price * @tax).ceil} (#{(@tax * 100).ceil}%)"
     .Btn
-      = link_to edit_menu_path(@menu), class: "btn btn-outline-danger check" do
+      = link_to menu_path(@menu), method: "delete", class: "btn btn-outline-danger check delete" do
+        削除
+      = link_to edit_menu_path(@menu), class: "btn btn-outline-warning check" do
         編集画面
       = link_to menus_path, class: "btn btn-outline-info check" do
         メニュー一覧へ戻る

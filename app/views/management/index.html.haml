@@ -5,7 +5,12 @@
     = link_to edit_info_path(@info), class: "Card" do
       = image_tag '/images/sample.jpg', width: "425", height: "300"
       .Card__Text
-        %p Meta
+        %p 店舗情報
+  .Main__card
+    = link_to edit_calculation_path(@calculation), class: "Card" do
+      = image_tag '/images/sample.jpg', width: "425", height: "300"
+      .Card__Text
+        %p 消費税率・値引率
   .Main__card
     = link_to galleries_path, class: "Card" do
       = image_tag '/images/sample.jpg', width: "425", height: "300"
@@ -17,6 +22,11 @@
   -#     = image_tag '/images/sample.jpg', width: "425", height: "300"
   -#     .Card__Text
   -#       %p User
+  .Main__card
+    = link_to stylists_path, class: "Card" do
+      = image_tag '/images/sample.jpg', width: "425", height: "300"
+      .Card__Text
+        %p Stylist
   .Main__card
     = link_to menus_path, class: "Card" do
       = image_tag '/images/sample.jpg', width: "425", height: "300"
@@ -32,8 +42,3 @@
       = image_tag '/images/sample.jpg', width: "425", height: "300"
       .Card__Text
         %p reservations
-  .Main__card
-    = link_to edit_calculation_path(@calculation), class: "Card" do
-      = image_tag '/images/sample.jpg', width: "425", height: "300"
-      .Card__Text
-        %p 消費税率・値引率

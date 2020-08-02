@@ -21,6 +21,10 @@ $(function() {
       $("body,html").animate({
         scrollTop: $(".Menu").offset().top});
     });
+    $("#Stylist").click(function() {
+      $("body,html").animate({
+        scrollTop: $(".Stylist").offset().top});
+    });
     $("#Acsess").click(function() {
       $("body,html").animate({
         scrollTop: $(".Acsess").offset().top});

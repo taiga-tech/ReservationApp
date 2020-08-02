@@ -1,6 +1,9 @@
--# ajaxで実装する
 = form_with model: @reservation, local: true, class: "ReservForm__contents" do |f|
   -# = hidden_field_tag :authenticity_token, form_authenticity_token
+
+  - if @reservation.errors.any?
+    %p.error ※選択・入力できていないものがあります
+
   .ReservForm__contents--stylist
     .StylistHeader
       %h4 Stylist Select
@@ -10,17 +13,21 @@
           .StylistContents__Box--Item
             = f.radio_button :stylist_id, "#{stylist.id}", class: "hidden"
             = f.label :"stylist_id_#{stylist.id}", class: "StylistContents__Box--Item--label" do
-              = image_tag stylist.image_url, class: "Image"
+              - if stylist.image?
+                = image_tag stylist.image.url, class: "Image" 
+              - else
+                = image_tag "/assets/default.jpg", class: "Image", width: "400px", height: "400px"
               %span.check
                 = icon("fas", "check")
           .StylistContents__Box--info
             .Info
               .Info__name
                 = stylist.name
-              .Info__position
-                = stylist.position
-            .comment
-              = stylist.comment
+              - if stylist.position != "No Select"
+                .Info__position
+                  = stylist.position
+            -# .comment
+            -#   = stylist.comment
 
     .BTN.MENU.next
       = icon("fas", "chevron-down")
@@ -54,7 +61,6 @@
       %h4 Date select
     .DateContents
       = render "reservations/carender"
-
 
     .BTN.USER.next
       = icon("fas", "chevron-down")

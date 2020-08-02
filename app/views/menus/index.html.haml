@@ -1,20 +1,11 @@
 %header
   = render "layouts/management-header"
-= link_to new_menu_path do
-  new
-
-- @menus.each do |menu|
-  %div
-    = link_to menu_path(menu.id) do
+.list-group.container
+  = link_to new_menu_path, class: "list-group-item list-group-item-action  list-group-item-secondary" do
+    = icon("fas", "plus")
+    追加する
+  - @menus.each do |menu|
+    = link_to menu_path(menu.id), class: "list-group-item list-group-item-action" do
       = menu.name
-      = "税抜#{menu.price}"
-      = "消費税#{(@tax * 100).ceil}%"
-      -# method化する
-      = "税込#{(menu.price + menu.price * @tax).ceil}円"
       - menu.categories.each do |category|
         = category.name
-
--# - @menus.each do |menu|
--#   %div
--#     = link_to edit_menu_path(menu.id) do
--#       = "edit#{menu.name}"
