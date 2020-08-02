@@ -5,9 +5,6 @@ class ApplicationController < ActionController::Base
 
 
 
-  def configre_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-  end
 
   def set_calculation
     @tax = Calculation.find(1).tax
@@ -18,5 +15,10 @@ class ApplicationController < ActionController::Base
   def info
     @info = Info.find(1)
     @phone = Phonelib.parse(@info.tel, :jp).national
+  end
+
+  protected
+  def configre_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 end

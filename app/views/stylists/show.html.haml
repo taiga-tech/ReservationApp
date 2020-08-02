@@ -1,8 +1,36 @@
-%div
-  = @stylist.name
-  = @stylist.comment
-  = image_tag @stylist.image.url if @stylist.image.present?
-
-%div
-  = link_to stylist_path(@stylist), method: "delete" do
-    削除
+%header
+  = render "layouts/management-header"
+.Update
+  .card
+    .alert.alert-secondary
+      編集内容を確認してください
+    %h3.card-header
+      プロフィール画像
+    .card-body
+      - if @stylist.image?
+        = image_tag @stylist.image.url, width: "400px", height: "400px"# if @stylist.image.present?
+      - else
+        = image_tag "/assets/default.jpg", width: "400px", height: "400px"
+    %h3.card-header
+      名前
+    .card-body
+      %h4.card-title
+        = @stylist.name
+    %h3.card-header
+      position
+    .card-body
+      %h4.card-title
+        = @stylist.position
+    %h3.card-header
+      自己紹介
+    .card-body
+      %h4.card-title
+        = @stylist.comment
+    .Btn
+      = link_to stylist_path(@stylist), method: "delete", class: "btn btn-outline-danger check delete" do
+        削除
+      = link_to edit_stylist_path(@stylist), class: "btn btn-outline-warning check" do
+        編集画面
+      -# 管理画面へのリンクは後ほど作成
+      = link_to stylists_path, class: "btn btn-outline-info check" do
+        スタイリスト一覧

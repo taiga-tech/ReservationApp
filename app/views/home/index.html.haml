@@ -23,13 +23,15 @@
     .Stylist__contents
       - @stylists.each do |stylist|
         .Stylist__contents--item
-          = link_to stylist_path(stylist) do
-            .Item__image
-              = image_tag stylist.image.url if stylist.image.present?
-            .Item__name
-              = stylist.name
-            .Item__position
-              = stylist.position
+          .Item__image
+            - if stylist.image?
+              = image_tag stylist.image.url
+            - else
+              = image_tag "/assets/default.jpg"
+          .Item__name
+            = stylist.name
+          .Item__position
+            = stylist.position
 
   .Gallery.container
     .Gallery__header

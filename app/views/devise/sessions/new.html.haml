@@ -1,23 +1,25 @@
-.Devise.container
-  %h1 Staff Only
-  %h2 Log in
+.Devise.form
+  .Devise__header
+    %h1 STAFF ONLY
+    -# %h2 LOG IN
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.label :name
-      %br/
-      = f.text_field :name, autofocus: true
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "current-password"
+    .field.text-input
+      -# = f.label :name do
+        Staff Name
+      = f.text_field :name, autofocus: true, placeholder: "STAFF NAME"
+      %span.separator
+    .field.text-input
+      -# = f.label :email
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "EMAIL"
+      %span.separator
+    .field.text-input
+      -# = f.label :password
+      = f.password_field :password, autocomplete: "current-password", placeholder: "PASSWORD"
+      %span.separator
     - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .actions
-      = f.submit "Log in"
+      -# .field.text-input
+      -#   = f.check_box :remember_me
+      -#   = f.label :remember_me
+    .actions.form-bottom
+      = f.submit "LOG IN"
   = render "devise/shared/links"

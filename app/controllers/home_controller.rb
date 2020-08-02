@@ -5,9 +5,8 @@ class HomeController < ApplicationController
     @menus = Menu.all
     @categories = Category.all
     @info = Info.find(1)
-    @stylists = Stylist.all
+    @stylists = Stylist.where.not(name: "No Select")
     @galleries = Gallery.all
-    @stylists = Stylist.all
   end
 
   private

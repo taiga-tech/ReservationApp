@@ -1,3 +1,25 @@
-// Place all the styles related to the stylists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.Form, .Update {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .card {
+    width: 50%;
+    margin: 50px;
+    .alert {
+      margin: 0;
+      font-weight: bold;
+    }
+    .form-group {
+      padding: 5px;
+    }
+    .Btn {
+      display: flex;
+      .check {
+        margin: 5px;
+      }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+}

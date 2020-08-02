@@ -3,6 +3,12 @@
     %h1.card-header
       = @title
     = form_with model: @menu, class: "card-body", local: true do |f|
+      - if @menu.errors.any?
+        %ul.error.white
+          %p 必須項目
+          - @menu.errors.full_messages.each do |message|
+            %li= "※#{message}"
+
       .form-group.card-title
         = f.label :name do
           name
