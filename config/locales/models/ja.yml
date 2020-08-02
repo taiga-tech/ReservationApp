@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    attributes:
+      stylist:
+        name: 名前
+        position: Position
+        image: 画像
+      staff:
+        name: スタッフネーム
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+      reservation:
+        name: 名前
+        email: メールアドレス
+        tel: 電話番号
+        date: 希望日程日程
+        time: 希望時間
+        menu_id: メニュー
+        stylist_id: スタイリスト
+      menu:
+        name: メニュー名
+        price: 価格
+        category_ids: カテゴリー
+      info:
+        code: 郵便番号
+        address: 住所
+        tel: 電話番号
+        weekday: 火曜日〜土曜日
+        weekend: 日曜日
+        holiday: 定休日
+      calculation:
+        tax: 消費税率
+        discount: 値引率

@@ -1,4 +1,4 @@
-%header
+%header.Top
   = render "layouts/header"
 
 .Main
@@ -23,13 +23,15 @@
     .Stylist__contents
       - @stylists.each do |stylist|
         .Stylist__contents--item
-          = link_to stylist_path(stylist) do
-            .Item__image
-              = image_tag stylist.image.url if stylist.image.present?
-            .Item__name
-              = stylist.name
-            .Item__position
-              = stylist.position
+          .Item__image
+            - if stylist.image?
+              = image_tag stylist.image.url
+            - else
+              = image_tag "/assets/default.jpg"
+          .Item__name
+            = stylist.name
+          .Item__position
+            = stylist.position
 
   .Gallery.container
     .Gallery__header
@@ -69,7 +71,6 @@
       %h4 Acsess
     .Acsess__contents
       .Acsess__contents--gmap
-        %h1 GoogleMapApi
-
+        %iframe{allowfullscreen:  "", "aria-hidden":  "false", frameborder:  "0", src:  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253.12156102741477!2d130.40463813792647!3d33.59299571672284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191939de371fd%3A0x14345bbecd3ed14c!2z44CSODEwLTA4MDEg56aP5bKh55yM56aP5bKh5biC5Y2a5aSa5Yy65Lit5rSy77yU5LiB55uu77yW4oiS77yR77ySIOODl-ODqeODvOODiOS4rea0sg!5e0!3m2!1sja!2sjp!4v1596172776972!5m2!1sja!2sjp", style:  "border:0;", tabindex:  "0", width: "100%", height: "100%"}
 %footer
   = render "layouts/footer"

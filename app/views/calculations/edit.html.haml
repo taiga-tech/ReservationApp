@@ -4,6 +4,11 @@
   .card
     %h1.card-header 消費税率・値引率編集
     = form_with model: @calculation, class: "card-body", local: true  do |f|
+      - if @calculation.errors.any?
+        %ul.error.white
+          %p 必須項目
+          - @calculation.errors.full_messages.each do |message|
+            %li= "※#{message}"
       .form-group.card-title
         = f.label :tax do
           消費税

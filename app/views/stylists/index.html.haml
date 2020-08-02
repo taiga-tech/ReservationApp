@@ -1,13 +1,10 @@
 %header
   = render "layouts/management-header"
-= link_to new_stylist_path do
-  new
-- @stylists.each do |stylist|
-  %div
-    = link_to stylist_path(stylist) do
-      -# ifはデフォルト画像を設定したら外す
-      = image_tag stylist.image.url if stylist.image.present?
-      = stylist.id
+.list-group.container
+  = link_to new_stylist_path,  class: "list-group-item list-group-item-action  list-group-item-secondary" do
+    = icon("fas", "user-plus")
+    追加する
+  - @stylists.each do |stylist|
+    = link_to stylist_path(stylist), class: "list-group-item list-group-item-action" do
       = stylist.name
       = stylist.position
-      = stylist.comment

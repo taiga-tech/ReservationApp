@@ -1,0 +1,13 @@
+.error {
+  outline: 1px solid red;
+  padding: 20px;
+  margin: 30px 0;
+  position: relative;
+  p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    transform: translateY(-50%) translateX(1em);
+  }
+}

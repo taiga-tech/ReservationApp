@@ -22,7 +22,6 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      render :create
     else
       render :new
     end

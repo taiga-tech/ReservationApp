@@ -23,11 +23,15 @@
           .stylist__name
             .content
               .img
-                = image_tag @reservation.stylist.image_url
+                - if @reservation.stylist.image?
+                  = image_tag @reservation.stylist.image.url
+                - else
+                  = image_tag "/assets/default.jpg"
               .name.bold
                 = @reservation.stylist.name
-              .position
-                = @reservation.stylist.position
+              - if @reservation.stylist.position != "No Select"
+                .position
+                  = @reservation.stylist.position
         .Menu
           .Item__menu
             .Item__menu--header.header
@@ -76,5 +80,7 @@
     .ReservationShow__link
       = link_to reservations_path, class: "send" do
         予約一覧へ戻る
-      = link_to reservation_path(@reservation), method: "delete", class: "send" do
+      = link_to edit_reservation_path, class: "send" do
+        予約を編集する
+      = link_to reservation_path(@reservation), method: "delete", class: "send delete" do
         予約を削除する

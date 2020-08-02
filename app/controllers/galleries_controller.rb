@@ -5,12 +5,13 @@ class GalleriesController < ApplicationController
   def index
     @title = "Galleries"
     @galleries = Gallery.all
-  end
-
-  def new
-    @title = "新規"
     @gallery = Gallery.new
   end
+
+  # def new
+  #   @title = "新規"
+  #   @gallery = Gallery.new
+  # end
 
   def create
     if Gallery.create(gallery_params)

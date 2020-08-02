@@ -1,11 +1,25 @@
 %header
   = render "layouts/management-header"
-
-
-= link_to new_gallery_path do
-  new
-- @galleries.each do |gallery|
-  = link_to gallery_path(gallery.id), method: "delete" do
-    = "delete#{gallery.id}"
-
-%h1 一覧表示させて削除するだけ、できればreactで画像確認モーダル実装
+.gallery
+  - @galleries.each do |gallery|
+    .gallery__contents
+      .gallery__contents--image
+        = image_tag gallery.image_url, class: "rounded-lg" if gallery.image.present?
+      .gallery__contents--btn
+        = link_to gallery_path(gallery), method: "delete", class: "btn btn-outline-danger delete" do
+          = "削除"
+  .new
+    -# = link_to new_gallery_path do
+    -#   .new-link.icon
+    -#     = icon("fas", "plus", class: "icon")
+    = form_with model: @gallery, local: true do |f|
+      - if @gallery.errors.any?
+        %ul.error.gray
+          %p 必須項目
+          - @gallery.errors.full_messages.each do |message|
+            %li= "※#{message}"
+      = f.label :image, class: "new-link icon" do
+        = icon("fas", "plus", class: "icon")
+      = f.file_field :image, class: "hidden"
+      = f.submit "保存", class: "btn btn-outline-info"
+#graydisplay
