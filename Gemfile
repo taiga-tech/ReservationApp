@@ -63,6 +63,8 @@ gem "pry-rails"
 gem "carrierwave"
 gem "mini_magick"
 gem "jquery-rails"
+gem 'jquery-ui-rails'
+gem 'rails_sortable'
 gem "bootstrap"
 gem 'phonelib'
 # gem "gmaps4rails"

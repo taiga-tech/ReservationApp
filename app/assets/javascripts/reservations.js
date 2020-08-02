@@ -59,12 +59,51 @@ $(function() {
       }
     });
   });
+
+
+  // $(function(){
+  //   Sortable.create(list1, {
+  //     sort: 1,
+  //     group: {
+  //       name: 'common_lists',
+  //       // pull: 'clone',
+  //       put: true,
+  //       put: true
+  //     },
+  //     animation: 150
+  //   });
+  //   Sortable.create(list2, {
+  //     sort: 1,
+  //     group: {
+  //       name: 'common_lists',
+  //       pull: true,
+  //       put: true
+  //     },
+  //     animation: 150
+  //   });
+  //   Sortable.create(list3, {
+  //     sort: 1,
+  //     group: {
+  //       name: 'common_lists',
+  //       pull: true,
+  //       put: true
+  //     },
+  //     animation: 150
+  //   });
+  //   Sortable.create(list3, {
+  //     sort: 1,
+  //     group: {
+  //       name: 'common_lists',
+  //       pull: true,
+  //       put: true
+  //     },
+  //     animation: 150
+  //   });
+  // });
+
+
+  $(".ReservationsIndex__Stylist--Reservations").railsSortable(".Reservation_Link");
 });
-
-
-
-
-
 
 
 

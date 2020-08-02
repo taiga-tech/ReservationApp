@@ -10,22 +10,28 @@
   -#       = icon("fas", "user-plus")
 
   .ReservationsIndex
-    - @stylists.each do |stylist|
+    - @stylists.zip(1..) do |stylist, i|
       .ReservationsIndex__Stylist
-        %h2.ReservationsIndex__Stylist--header
-          = stylist.name
-          = stylist.position
-        .ReservationsIndex__Stylist--Reservations
+        .ReservationsIndex__Stylist--header
+          .name
+            %h2= stylist.name
+            = link_to new_reservation_path do
+              = icon("fas", "plus")
+          .position
+            %h5= stylist.position
+        .ReservationsIndex__Stylist--Reservations{id: "list#{i}"}
           - stylist.reservations.each do |stylistreservation|
             .Reservation_Link
               = link_to reservation_path(stylistreservation) do
                 .Reservation__Link--name
-                  = "#{stylistreservation.name}様"
-                  = stylistreservation.menu.name
-                  = stylistreservation.menu.price
                   .Reservation__Link--dateTime
                     = stylistreservation.date
                     = stylistreservation.time
+                  = "#{stylistreservation.name}様"
+                  .Reservation__Link--menu
+                    = stylistreservation.menu.name
+                    = "¥#{(stylistreservation.menu.price).to_s(:delimited)}"
+    -# .Reservation
             -# - if @today.strftime("%F") == stylistreservation.date
             -#   - if 10:00
             -#     .Reservation_Link
