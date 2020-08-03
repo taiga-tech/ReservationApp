@@ -34,4 +34,16 @@ $(function() {
       }
     );
   });
+
+  let num = 0;
+  $("#after-management").click(function() {
+    $(this).data("click", ++num);
+    let afterManagement = $(this).data("click");
+    if (afterManagement == 10) {
+      let html = `<li class="Link" id="hidden">
+                    <a href="/management">Management</a>
+                  </li>`;
+      $("#List").append(html);
+    }
+  });
 });
