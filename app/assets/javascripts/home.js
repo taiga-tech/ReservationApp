@@ -36,7 +36,7 @@ $(function() {
   });
 
   let num = 0;
-  $("#after-management").click(function() {
+  $("#after").click(function() {
     $(this).data("click", ++num);
     let afterManagement = $(this).data("click");
     if (afterManagement == 10) {
