@@ -1,28 +1,33 @@
 .Main {
   padding: 30px;
-  .Form, .Update {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .card {
-      width: 50%;
-      margin: 50px;
-      .alert {
-        margin: 0;
-        font-weight: bold;
+}
+.Form, .Update {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  .card {
+    width: 50%;
+    margin: 50px;
+    .alert {
+      margin: 0;
+      font-weight: bold;
+    }
+    .form-group {
+      padding: 5px;
+    }
+    .Btn {
+      display: flex;
+      .check {
+        margin: 5px;
       }
-      .form-group {
-        padding: 5px;
-      }
-      .Btn {
-        display: flex;
-        .check {
-          margin: 5px;
-        }
-      }
-      .btn {
-        width: 100%;
-      }
+    }
+    .btn {
+      width: 100%;
     }
   }
 }

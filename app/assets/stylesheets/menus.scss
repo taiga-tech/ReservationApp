@@ -4,37 +4,38 @@
 
 .Main {
   padding: 30px;
-  .Form, .Update {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .card {
-      width: 50%;
-      margin: 50px;
-      .Checkbox {
+}
+.Form, .Update {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .card {
+    width: 50%;
+    margin: 50px;
+    .Checkbox {
+      display: flex;
+      justify-content: space-around;
+      &__item {
         display: flex;
-        justify-content: space-around;
-        &__item {
-          display: flex;
-          align-items: center;
-          &--btn {
-            margin: 10px;
-          }
+        align-items: center;
+        &--btn {
+          margin: 10px;
         }
       }
-      .alert {
-        margin: 0;
-        font-weight: bold;
+    }
+    .alert {
+      margin: 0;
+      font-weight: bold;
+    }
+    .Btn {
+      display: flex;
+      .check {
+        margin: 5px;
       }
-      .Btn {
-        display: flex;
-        .check {
-          margin: 5px;
-        }
-      }
-      .btn {
-        width: 100%;
-      }
+    }
+    .btn {
+      width: 100%;
     }
   }
 }
+
