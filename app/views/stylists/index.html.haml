@@ -1,10 +1,11 @@
 %header
   = render "layouts/management-header"
-.list-group.container
-  = link_to new_stylist_path,  class: "list-group-item list-group-item-action  list-group-item-secondary" do
-    = icon("fas", "user-plus")
-    追加する
-  - @stylists.each do |stylist|
-    = link_to stylist_path(stylist), class: "list-group-item list-group-item-action" do
-      = stylist.name
-      = stylist.position
+.Main
+  .list-group.container
+    = link_to new_stylist_path,  class: "list-group-item list-group-item-action  list-group-item-secondary" do
+      = icon("fas", "user-plus")
+      追加する
+    - @stylists.each do |stylist|
+      = link_to stylist_path(stylist), class: "list-group-item list-group-item-action" do
+        = stylist.name
+        = stylist.position

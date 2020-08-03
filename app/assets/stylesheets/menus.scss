@@ -2,36 +2,39 @@
   box-sizing: border-box;
 }
 
-.Form, .Update {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  .card {
-    width: 50%;
-    margin: 50px;
-    .Checkbox {
-      display: flex;
-      justify-content: space-around;
-      &__item {
+.Main {
+  padding: 30px;
+  .Form, .Update {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .card {
+      width: 50%;
+      margin: 50px;
+      .Checkbox {
         display: flex;
-        align-items: center;
-        &--btn {
-          margin: 10px;
+        justify-content: space-around;
+        &__item {
+          display: flex;
+          align-items: center;
+          &--btn {
+            margin: 10px;
+          }
         }
       }
-    }
-    .alert {
-      margin: 0;
-      font-weight: bold;
-    }
-    .Btn {
-      display: flex;
-      .check {
-        margin: 5px;
+      .alert {
+        margin: 0;
+        font-weight: bold;
       }
-    }
-    .btn {
-      width: 100%;
+      .Btn {
+        display: flex;
+        .check {
+          margin: 5px;
+        }
+      }
+      .btn {
+        width: 100%;
+      }
     }
   }
 }

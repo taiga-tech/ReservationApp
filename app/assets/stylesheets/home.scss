@@ -62,7 +62,7 @@
       margin: 20px 35px;
       padding: 10px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: nowrap;
       &--item:hover {
         opacity: 1;
@@ -81,6 +81,7 @@
             img {
               width: 200px;
               height: 200px;
+              object-fit: cover;
             }
           }
           &__name {

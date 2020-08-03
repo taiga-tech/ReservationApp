@@ -1,11 +1,12 @@
 %header
   = render "layouts/management-header"
-.list-group.container
-  = link_to new_menu_path, class: "list-group-item list-group-item-action  list-group-item-secondary" do
-    = icon("fas", "plus")
-    追加する
-  - @menus.each do |menu|
-    = link_to menu_path(menu.id), class: "list-group-item list-group-item-action" do
-      = menu.name
-      - menu.categories.each do |category|
-        = category.name
+.Main
+  .list-group.container
+    = link_to new_menu_path, class: "list-group-item list-group-item-action  list-group-item-secondary" do
+      = icon("fas", "plus")
+      追加する
+    - @menus.each do |menu|
+      = link_to menu_path(menu.id), class: "list-group-item list-group-item-action" do
+        = menu.name
+        - menu.categories.each do |category|
+          = category.name

@@ -1,60 +1,64 @@
-.gallery {
-  display: flex;
-  color: #fff;
-  padding: 10px;
-  text-align: right;
-  .new {
-    padding: 10px;
-    a {
-      text-decoration: none;
-    }
-    .hidden {
-      display: none;
-    }
-    .new-link {
-      width: 200px;
-      height: 200px;
-      background-color: #424a50;
-      border-radius: 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0.5;
-      .icon {
-        font-size: 50px;
-    }
-  }
-  .new-link:hover {
-    opacity: 1;
-  }
-}
-  &__contents {
-    padding: 10px;
-    img {
-      width: 200px;
-      height: 200px;
-    }
-  }
-}
 
-#graydisplay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: 100%!important;
-  height: 100%;
-  background: rgba(0,0,0,0.45);
-}
-#graydisplay img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  max-width: 90%;
-  max-height: 90%;
-  height: 90%;
-}
+  .gallery {
+    display: flex;
+    color: #fff;
+    padding: 20px;
+    text-align: right;
+    flex-wrap: wrap;
+    .new {
+      padding: 10px;
+      a {
+        text-decoration: none;
+      }
+      .hidden {
+        display: none;
+      }
+      .new-link {
+        width: 300px;
+        height: 300px;
+        background-color: #424a50;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.5;
+        .icon {
+          font-size: 50px;
+      }
+    }
+    .new-link:hover {
+      opacity: 1;
+    }
+  }
+    &__contents {
+      padding: 10px;
+      img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  #graydisplay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%!important;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+  }
+  #graydisplay img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    height: 90%;
+  }
+
