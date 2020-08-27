@@ -3,9 +3,13 @@
 # ReservationApp
   **小規模ヘアサロン向け予約サイト**
 
-
 ## App URL
   https://hairsalon-reservation.herokuapp.com/
+
+**テストアカウント**
+  - STAFF NAME : test
+  - EMAIL : test@test.com
+  - PASSWORD : test1234
 
 ## 開発環境
   |language|version|
@@ -19,17 +23,24 @@
   - ユーザー画面
     - 美容室の予約
 
+<br>
+
   - 店舗管理画面
-    - Staff登録(Devise)
+    - Staff登録 (Devise)
       ![managements](https://gyazo.com/9ac1e6f6f35cd49cb5bd3d8530599bc2.gif)
+        > トップページのフッターにあるタイトルを10回クリックすると`Managements`というリンクが出現する、それをクリックすると管理画面へ入ることができる。
     - 予約一覧
+      ![reservations](https://user-images.githubusercontent.com/67569270/91419501-6ecab580-e88e-11ea-9f67-af42eebc257e.png)
+        > 現状日時順にならないため、ソート機能を実装する予定
     - 店舗情報編集
-    - スタイリスト編集
+    - スタイリスト追加、編集
     - 消費税、割引率編集
-    - メニュー編集
+    - メニュー追加、編集
     - プロモーション画像切り替え
 
 ## 作成意図
+
+## 工夫したポイント
 
 ## 追加実装予定
   - リファクタリング
@@ -40,6 +51,8 @@
   - 店舗情報の住所を変更するとトップページの位置情報を変更する(Google API)
   - 管理画面へのアクセスのセキュリティ強化
   - 管理画面のビュー
+  - モバイルアプリ化
+  - レスポンシブデザイン
 
 ## DB設計
 
