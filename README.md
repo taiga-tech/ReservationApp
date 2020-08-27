@@ -39,18 +39,17 @@
   私は、特にヘアサロン業界に携わってはないのですが、知人のヘアサロン経営者から、スマートフォンのブラウザから予約をしてもらうのはすごく大変で、
   店舗のSNSと予約が合体したモバイルアプリがあるとスマートフォンに慣れていないお客様でもインストーさえすれば電話予約が少なくなるという話を聞いてヒントにしました。
   現状モバイルアプリへの実装は`WebView`のみでの実装はできているのですが、より高いユーザビリティを求めているため、Swiftでの実装を考えております。
-<img width="430" alt="iphone" src="https://i.gyazo.com/93018d787f433f46712d2f82622436e2.gif">
-![iphone](https://i.gyazo.com/93018d787f433f46712d2f82622436e2.gif)
+  <img with="430" alt="iphone" src="https://gyazo.com/e936ab12835f19576fbd38cf3be7ec53.gif">
 
 ## 工夫したポイント
   - 管理画面へのアクセス方法を少し困難にしました。
-<img width="800" alt="iphone" src="https://gyazo.com/9ac1e6f6f35cd49cb5bd3d8530599bc2.gif">
+<img width="800" alt="management" src="https://gyazo.com/9ac1e6f6f35cd49cb5bd3d8530599bc2.gif">
 
   > トップページのフッターにあるタイトルを10回クリックすると`Managements`というリンクが出現するため、クリックすると管理画面へアクセスできます。
     ※現状テスト段階のため、現在のアクセス方法は単純にしてます。
 
   - Trelloを意識したUIにこだわり、タスクの管理のしやすいような実装を意識しました。
-<img width="800" alt="iphone" src="https://gyazo.com/4173d76a4bf12a52a9cd32206e6e14c1.gif">
+<img width="800" alt="trello" src="https://gyazo.com/4173d76a4bf12a52a9cd32206e6e14c1.gif">
 
   > 現状、縦方向のソートしかできないため、スタイリスト間の移動ができるよう改善予定です。
 
