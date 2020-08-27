@@ -6,10 +6,10 @@
 ## App URL
   https://hairsalon-reservation.herokuapp.com/
 
-**テストアカウント**
-  - STAFF NAME : test
-  - EMAIL : test@test.com
-  - PASSWORD : test1234
+#### テストアカウント
+  - STAFF NAME : `test`
+  - EMAIL : `test@test.com`
+  - PASSWORD : `test1234`
 
 ## 開発環境
   |language|version|
@@ -27,11 +27,12 @@
 
   - 店舗管理画面
     - Staff登録 (Devise)
-      ![managements](https://gyazo.com/9ac1e6f6f35cd49cb5bd3d8530599bc2.gif)
+      <img width="800" alt="iphone" src="https://gyazo.com/9ac1e6f6f35cd49cb5bd3d8530599bc2.gif">
+
         > トップページのフッターにあるタイトルを10回クリックすると`Managements`というリンクが出現する、それをクリックすると管理画面へ入ることができる。
     - 予約一覧
-      ![reservations](https://user-images.githubusercontent.com/67569270/91419501-6ecab580-e88e-11ea-9f67-af42eebc257e.png)
-        > 現状日時順にならないため、ソート機能を実装する予定
+      <img width="800" alt="iphone" src="https://user-images.githubusercontent.com/67569270/91419501-6ecab580-e88e-11ea-9f67-af42eebc257e.png">
+
     - 店舗情報編集
     - スタイリスト追加、編集
     - 消費税、割引率編集
@@ -39,6 +40,12 @@
     - プロモーション画像切り替え
 
 ## 作成意図
+  少数オペレーションのヘアサロンをターゲットに予約サイトを作成しました。
+  理由は少数オペレーションだと電話対応が困難になり、作業中のお客様を待たせてしまうと考えたためです。
+  私は、特にヘアサロン業界に携わってはないのですが、知人のヘアサロン経営者から、スマートフォンのブラウザから予約をしてもらうのはすごく大変で、
+  店舗のSNSと予約が合体したモバイルアプリがあるとスマートフォンに慣れていないお客様でもインストーさえすれば電話予約が少なくなるという話を聞いてヒントにしました。
+  現状モバイルアプリ↓への実装はWebViewのみでの実装はできているのですが、高いユーザビリティを求めるには
+  <img width="430" alt="iphone" src="https://user-images.githubusercontent.com/67569270/91437511-fae7d780-e8a4-11ea-88fe-008d72482330.png">
 
 ## 工夫したポイント
 
