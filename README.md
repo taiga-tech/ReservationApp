@@ -11,6 +11,8 @@
   - EMAIL : `test@test.com`
   - PASSWORD : `test1234`
 
+<br>
+
 ## 開発環境
   |language|version|
   |:--------|:-------|
@@ -18,6 +20,8 @@
   |Ruby on Rails|6.0.3|
   |MySQL|5.6.47|
   |jQuery|4.4.0|
+
+<br>
 
 ## アプリ機能
   - **ユーザー画面**
@@ -33,13 +37,17 @@
     - メニュー追加、編集
     - プロモーション画像切り替え
 
+<br>
+
 ## 作成意図
   少数オペレーションのヘアサロンをターゲットに予約サイトを作成しました。
   理由は少数オペレーションだと電話対応が困難になり、作業中のお客様を待たせてしまうと考えたためです。
-  私は、特にヘアサロン業界に携わってはないのですが、知人のヘアサロン経営者から、スマートフォンのブラウザから予約をしてもらうのはすごく大変で、
-  店舗のSNSと予約が合体したモバイルアプリがあるとスマートフォンに慣れていないお客様でもインストーさえすれば電話予約が少なくなるという話を聞いてヒントにしました。
-  現状モバイルアプリへの実装は`WebView`のみでの実装はできているのですが、より高いユーザビリティを求めているため、Swiftでの実装を考えております。
-  <img with="430px" alt="iphone" src="https://gyazo.com/8af9d51b795a26d8b6ed516713b9104c.gif">
+  知人のヘアサロン経営者から、スマートフォンのブラウザから予約をしてもらうのはすごく大変で、
+  店舗のSNSと予約が合体したモバイルアプリがあるとスマートフォンに慣れていないお客様でもインストールさえすれば電話予約が少なくなるという話を聞いてヒントにしました。
+  現状モバイルアプリへの実装は[`WebView`](https://github.com/taiga-tech/iosReservationApp)のみでの実装はできているのですが、より高いユーザビリティを求めているため、Swiftでの実装を考えております。
+  <img width="380px" alt="iphone" src="https://gyazo.com/8af9d51b795a26d8b6ed516713b9104c.gif">
+
+<br>
 
 ## 工夫したポイント
   - 管理画面へのアクセス方法を少し困難にしました。
@@ -48,20 +56,124 @@
   > トップページのフッターにあるタイトルを10回クリックすると`Managements`というリンクが出現するため、クリックすると管理画面へアクセスできます。
     ※現状テスト段階のため、現在のアクセス方法は単純にしてます。
 
+<br>
+
   - Trelloを意識したUIにこだわり、タスクの管理のしやすいような実装を意識しました。
 <img width="800px" alt="trello" src="https://gyazo.com/4173d76a4bf12a52a9cd32206e6e14c1.gif">
 
   > 現状、縦方向のソートしかできないため、スタイリスト間の移動ができるよう改善予定です。
 
+<br>
+
+  - 予約フォームで希望ヘアスタイルの画像を添付することにより、カウンセリング時間の短縮ができます。
+<img width="800px" alt="trello" src="https://gyazo.com/2719685bd6cb9eb1ead1ba84de280823.gif">
+
+
+<br>
+
 ## 追加実装予定
   - モバイルアプリ化
-  - レスポンシブデザイン
+  - レスポンシブ化
   - 予約時にメニューの複数選択
   - 予約一覧で日時順にする
   - 予約キャンセル、終了タスクの棲み分け
   - 店舗情報の住所を変更するとトップページ下部のマップを変更する(Google API)
   - 管理画面へのアクセスのセキュリティ強化
 
-## DB設計
+<br>
 
-<img width="800" alt="iphone" src="https://user-images.githubusercontent.com/67569270/91386233-82195900-e86d-11ea-830c-c1bba4936f7b.png">
+## DB設計
+### ER図
+<img width="800" alt="iphone" src="https://user-images.githubusercontent.com/67569270/91464572-ad309680-e8c7-11ea-8319-32042b184706.png">
+
+### Tables
+---
+#### reservations
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|tel|string|null: false|
+|date|string|null: false|
+|time|string|null: false|
+|request|string||
+|image|string||
+|menu_id|references|foreign_key: true|
+|stylist_id|references|foreign_key: true|
+
+##### Association
+- belongs_to :menu
+- belongs_to :stylist
+
+#### stylists
+|Column|Type|Options|
+|------|-----|-------|
+|name|string|null: false|
+|position|string|null: false|
+|comment|text||
+|image|stirng||
+
+##### Association
+- has_many :reservations
+
+
+#### menus
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|parice|integer|null: false|
+|comment|text||
+
+##### Association
+- has_many :reservations
+- has_many :menu_categories
+- has_many :categories, through: :menu_categories
+
+
+#### menu_categiries
+|Column|Type|Options|
+|------|----|-------|
+|menu_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
+
+##### Association
+- belongs_to :menu
+- belongs_to :category
+
+
+#### categories
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+##### Association
+- has_many :menu_categories
+- has_many :menus, through: :menu_categories
+
+#### staffs
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+#### infos
+|Column|Type|Options|
+|------|----|-------|
+|code|string|null: false|
+|address|string|null: false|
+|tel|string|null: false|
+|weekday|string|null: false|
+|weekend|string|null: false|
+|holiday|string|null: false|
+
+#### galleries
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+
+#### calculations
+|Column|Type|Options|
+|------|----|-------|
+|tax|float|null: false|
+|discount|float|null: false|
