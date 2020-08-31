@@ -18,7 +18,8 @@
             = link_to new_reservation_path do
               = icon("fas", "plus")
           .position
-            %h5= stylist.position
+            - unless stylist.position == "No Select"
+              %h5= stylist.position
         .ReservationsIndex__Stylist--Reservations{id: "list#{i}"}
           - stylist.reservations.each do |stylistreservation|
             .Reservation_Link
