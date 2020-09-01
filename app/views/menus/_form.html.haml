@@ -2,7 +2,7 @@
   .card
     %h1.card-header
       = @title
-    = form_with model: @menu, class: "card-body", local: true do |f|
+    = form_with model: @menu, class: "card-body", local: true, id: "form_menu" do |f|
       - if @menu.errors.any?
         %ul.error.white
           %p 必須項目

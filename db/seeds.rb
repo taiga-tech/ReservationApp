@@ -21,7 +21,7 @@ CSV.foreach('db/csv/table-menu_categories.csv') do |row|
 end
 
 CSV.foreach("db/csv/table-stylists.csv") do |row|
-  Stylist.create!( name: row[1], position: row[2], comment: row[3], image: row[4])
+  Stylist.create!( name: row[1], position: row[2], comment: row[3], image: File.open("./public/images/default.jpg"))
 end
 
 CSV.foreach("db/csv/table-staffs.csv") do |row|
