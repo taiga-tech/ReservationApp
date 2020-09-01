@@ -3,8 +3,9 @@
 # ReservationApp
   **小規模ヘアサロン向け予約サイト**
 
-## App URL (EC2移行中)
-  https://hairsalon-reservation.herokuapp.com/
+## App URL (CircleCI移行予定)
+  AWS:    http://54.248.158.30/
+  heroku: https://hairsalon-reservation.herokuapp.com/
 
 #### テストアカウント
   - STAFF NAME : `test`
