@@ -35,6 +35,14 @@ $curve: linear;
       overflow: hidden;
       margin-bottom: .875em;
       font-size: 20px;
+      input.devise-invalid {
+        border-bottom: 2px solid rgb(255, 86, 86);
+      }
+
+      p.devise-invalid {
+        color: rgb(255, 86, 86);
+        font-weight: bold;
+      }
     }
 
     input[type="text"],
@@ -101,3 +109,4 @@ $curve: linear;
     justify-content: space-between;
   }
 }
+

@@ -1,0 +1,10 @@
+p.invalid {
+  color: rgb(255, 86, 86);
+  font-weight: bold;
+}
+
+input[type="text"].invalid,
+textarea.invalid {
+  border: 1.5px solid rgb(255, 86, 86);
+  outline-style: none;
+}

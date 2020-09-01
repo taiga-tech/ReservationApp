@@ -1,6 +1,6 @@
 class MenusController < ApplicationController
   before_action :authenticate_staff!
-  before_action :set_menu, only: [:show, :edit, :update]
+  before_action :set_menu, only: [:show, :edit, :update, :destroy]
   before_action :new_title, only: [:new, :create]
   # before_action :tax_include, only: [:show]
 
@@ -40,8 +40,9 @@ class MenusController < ApplicationController
   end
 
   def destroy
-    @menu.destroy
-    # 削除前に確認のモーダル追加
+    if @menu.destroy
+      redirect_to menus_path
+    end
   end
 
   private
