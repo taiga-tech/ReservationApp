@@ -5,12 +5,26 @@
 
 ## App URL (CircleCI移行予定)
   AWS:    http://54.248.158.30/
-  heroku: https://hairsalon-reservation.herokuapp.com/
+
+  ~~heroku:https://hairsalon-reservation.herokuapp.com/~~
 
 #### テストアカウント
   - STAFF NAME : `test`
   - EMAIL : `test@test.com`
   - PASSWORD : `test1234`
+
+<br>
+
+## インストール方法
+  ```shell
+    % git clone https://github.com/taiga-tech/ReservationApp.git
+    % cd ReservationApp
+    ReservationApp % bundle install
+    ReservationApp % yarn install
+    ReservationApp % rails db:create
+    ReservationApp % rails db:migrate
+    ReservationApp % rails db:seed
+  ```
 
 <br>
 
