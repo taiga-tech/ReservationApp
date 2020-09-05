@@ -3,7 +3,7 @@
 # ReservationApp
   **小規模ヘアサロン向け予約サイト**
 
-## App URL (CircleCI移行予定)
+## App URL
   AWS:    http://54.248.158.30/
 
   ~~heroku:https://hairsalon-reservation.herokuapp.com/~~
@@ -93,7 +93,7 @@
   - 予約キャンセル、終了タスクの棲み分け
   - 店舗情報の住所を変更するとトップページ下部のマップを変更する(Google API)
   - 管理画面へのアクセスのセキュリティ強化
-
+  - CircleCI導入
 <br>
 
 # DB設計
