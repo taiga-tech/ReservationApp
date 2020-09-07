@@ -10,6 +10,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: bundle install
-          command: bundle install --path vendor/bundle
+          name: ruby -v
+          command: ruby -v
       - ruby/bundle-install
