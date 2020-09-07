@@ -73,6 +73,7 @@ gem 'rails_sortable'
 gem "bootstrap"
 gem 'phonelib'
 gem "fog-aws"
+gem "dotenv-rails"
 # gem "gmaps4rails"
 # gem "geocoder"
 
