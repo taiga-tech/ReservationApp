@@ -12,3 +12,4 @@ jobs:
       - run:
           name: ruby -v
           command: ruby -v
+      - ruby/bundle-install
