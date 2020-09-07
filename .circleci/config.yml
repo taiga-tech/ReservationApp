@@ -10,6 +10,14 @@ workflows:
       - slack-notification
 
 jobs:
+
+  slack-notification:
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - run: exit 0
+      - slack/status
+
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
@@ -19,10 +27,3 @@ jobs:
       - run:
           name: ruby -v
           command: ruby -v
-
-  slack-notification:
-    docker:
-      - image: buildpack-deps:trusty
-    steps:
-      - run: exit 0
-      - slack/status
