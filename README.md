@@ -32,7 +32,7 @@
   |language|version|
   |:--------|:-------|
   |Ruby|2.6.5|
-  |Ruby on Rails|6.0.3|
+  |Ruby on Rails|6.0.3.3|
   |MySQL|5.6.47|
   |jQuery|4.4.0|
 
