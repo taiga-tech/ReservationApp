@@ -23,12 +23,12 @@
       opacity: 0.5;
       .icon {
         font-size: 50px;
+      }
+    }
+    .new-link:hover {
+      opacity: 1;
     }
   }
-  .new-link:hover {
-    opacity: 1;
-  }
-}
   &__contents {
     padding: 10px;
     img {
