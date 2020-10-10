@@ -51,9 +51,9 @@ test:
 production:
   <<: *default
   database: ReservationApp_production
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  username: ReservationApp
+  password: <%= ENV['RESERVATIONAPP_DATABASE_PASSWORD'] %>
+  # socket: /var/lib/mysql/mysql.sock
 
 # production:
 #   <<: *default
