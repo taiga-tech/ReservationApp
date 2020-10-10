@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CalculationsController < ApplicationController
   before_action :authenticate_staff!
 
@@ -13,6 +15,7 @@ class CalculationsController < ApplicationController
   end
 
   private
+
   def calculation_params
     params.require(:calculation).permit(:tax, :discount)
   end

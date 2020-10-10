@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class StylistsController < ApplicationController
   before_action :authenticate_staff!
   before_action :set_stylist, only: [:show, :edit, :update, :destroy]
 
   def index
-    @stylists = Stylist.where.not(name: "No Select")
+    @stylists = Stylist.where.not(name: 'No Select')
     # respond_to do |format|
     #   format.html
     #   format.json
@@ -14,12 +16,12 @@ class StylistsController < ApplicationController
   end
 
   def new
-    @title = "新規スタイリスト登録"
+    @title = '新規スタイリスト登録'
     @stylist = Stylist.new
   end
 
   def create
-    @title = "新規スタイリスト登録"
+    @title = '新規スタイリスト登録'
     @stylist = Stylist.new(stylist_params)
     if @stylist.save
       redirect_to stylist_path(@stylist)
@@ -29,7 +31,7 @@ class StylistsController < ApplicationController
   end
 
   def edit
-    @title = "スタイリスト情報編集"
+    @title = 'スタイリスト情報編集'
   end
 
   def update
@@ -41,12 +43,11 @@ class StylistsController < ApplicationController
   end
 
   def destroy
-    if @stylist.destroy
-      redirect_to stylists_path
-    end
+    redirect_to stylists_path if @stylist.destroy
   end
 
   private
+
   def set_stylist
     @stylist = Stylist.find(params[:id])
   end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Stylist < ApplicationRecord
   has_many :reservations
 

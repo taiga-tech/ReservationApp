@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InfosController < ApplicationController
   before_action :authenticate_staff!
   # before_action :set_info, only: [:show, :edit, :update]
@@ -10,7 +12,7 @@ class InfosController < ApplicationController
   end
 
   def edit
-    @title = "店舗情報編集画面"
+    @title = '店舗情報編集画面'
   end
 
   def update
@@ -22,6 +24,7 @@ class InfosController < ApplicationController
   end
 
   private
+
   def info_params
     params.require(:info).permit(:code, :address, :tel, :weekday, :weekend, :holiday)
   end

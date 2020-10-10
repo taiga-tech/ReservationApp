@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReservationsController < ApplicationController
   before_action :authenticate_staff!, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
@@ -8,7 +10,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
-    @stylists = Stylist.all#.order(@reservations.date: :desc)
+    @stylists = Stylist.all # .order(@reservations.date: :desc)
   end
 
   def new
@@ -42,24 +44,23 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    if @reservation.destroy
-      redirect_to reservations_path
-    end
+    redirect_to reservations_path if @reservation.destroy
   end
 
   private
+
   def set_reservation
     @reservation = Reservation.find(params[:id])
   end
 
   def set_other
-    @stylists = Stylist.all#where(["name LIKE ? ", "%#{params[:keyword]}%"])
+    @stylists = Stylist.all # where(["name LIKE ? ", "%#{params[:keyword]}%"])
     @menus = Menu.all
   end
 
   def set_date
-    @today = Date.current#.days_since(1)
-    @week = Date.current#.days_since(1)
+    @today = Date.current # .days_since(1)
+    @week = Date.current # .days_since(1)
     @date = Date.current
   end
 
@@ -74,7 +75,7 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation)
-    .permit(
+          .permit(
             :name,
             :email,
             :tel,
@@ -83,7 +84,7 @@ class ReservationsController < ApplicationController
             :request,
             :image,
             :stylist_id,
-            :menu_id,
-    )
+            :menu_id
+          )
   end
 end

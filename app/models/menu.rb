@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Menu < ApplicationRecord
   has_many :reservations
   has_many :menu_categories, dependent: :destroy

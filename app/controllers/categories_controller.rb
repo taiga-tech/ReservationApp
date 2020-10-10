@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CategoriesController < ApplicationController
   before_action :authenticate_staff!
   before_action :set_category, only: [:edit, :update, :destroy]
@@ -35,6 +37,7 @@ class CategoriesController < ApplicationController
   end
 
   private
+
   def set_categroy
     @categroy = Category.find(params[:id])
   end

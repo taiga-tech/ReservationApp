@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MenusController < ApplicationController
   before_action :authenticate_staff!
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
@@ -5,7 +7,7 @@ class MenusController < ApplicationController
   # before_action :tax_include, only: [:show]
 
   def index
-    @title = "メニュー一覧"
+    @title = 'メニュー一覧'
     @menus = Menu.all
   end
 
@@ -26,12 +28,12 @@ class MenusController < ApplicationController
   end
 
   def edit
-    @title = "メニュー編集画面"
+    @title = 'メニュー編集画面'
     # taxも編集できるようにする
   end
 
   def update
-    @title = "メニュー編集画面"
+    @title = 'メニュー編集画面'
     if @menu.update(menu_params)
       redirect_to menu_path(set_menu)
     else
@@ -40,12 +42,11 @@ class MenusController < ApplicationController
   end
 
   def destroy
-    if @menu.destroy
-      redirect_to menus_path
-    end
+    redirect_to menus_path if @menu.destroy
   end
 
   private
+
   def set_menu
     @menu = Menu.find(params[:id])
   end
@@ -55,7 +56,7 @@ class MenusController < ApplicationController
   end
 
   def new_title
-    @title = "メニュー追加画面"
+    @title = 'メニュー追加画面'
   end
 
   # def tax_include_index

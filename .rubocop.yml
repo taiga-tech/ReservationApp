@@ -40,3 +40,9 @@ Style/EmptyMethod:
 Style/SymbolArray:
   Enabled: false
 
+MethodLength:
+  CountComments: true
+  Max: 12
+
+Naming/VariableName:
+  Enabled: false
