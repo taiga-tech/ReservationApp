@@ -98,7 +98,7 @@ jobs:
       - bundle_install
       - set_db
       - run_rubocop
-      # - run_rspec
+      - run_rspec
       - test_notification
 
   deploy_master:
