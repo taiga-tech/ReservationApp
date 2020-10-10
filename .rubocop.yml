@@ -1,0 +1,42 @@
+AllCops:
+  Exclude:
+    - "tmp/**/*"
+    - "config/initializers/*"
+    - "vendor/**/*"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+    - "db/migrate/*.rb"
+    - "bin/*"
+  DisplayCopNames: true
+  TargetRubyVersion: 2.7.1
+
+  Rails:
+    Enabled: true
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Lint/ShadowedException:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+# Style/FrozenStringLiteralComment:
+#   Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+

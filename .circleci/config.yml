@@ -87,12 +87,6 @@ commands:
           name: rspec
           command: bundle exec rspec
 
-  run_ruby:
-    steps:
-      - run:
-          name: ruby version
-          command: ruby -v
-
 # ---------------------------------
 
 jobs:
@@ -103,9 +97,8 @@ jobs:
       - checkout
       - bundle_install
       - set_db
-      # - run_rubocop
+      - run_rubocop
       # - run_rspec
-      - run_ruby
       - test_notification
 
   deploy_master:
