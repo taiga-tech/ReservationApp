@@ -144,13 +144,14 @@ orbs:
 # ---------------- Commands ----------------
 
 commands:
-  # env_setup:
-  #   steps:
-  #     - run:
-  #         name: ENV Setup
-  #         command: |
-  #           echo $ENV_FILE | base64 -di > .env
-  #           echo $TEST_ENV_FILE | base64 -di > src/.env.testing
+  env_setup:
+    steps:
+      - run:
+          name: ENV Setup
+          command: |
+            echo $ENV_FILE | base64 -di > .env
+            echo $ENV_FILE | base64 -di > src/.env
+#            echo $TEST_ENV_FILE | base64 -di > src/.env.testing
 
   docker_setup:
     steps:
@@ -221,7 +222,7 @@ jobs:
     machine: true
     steps:
       - checkout
-      # - env_setup
+      - env_setup
       - docker_setup
       # - laravel_setup
       # - test_run
