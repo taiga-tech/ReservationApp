@@ -11,7 +11,7 @@ executors:
   test:
     working_directory: ~/ReservationApp
     docker:
-      - image: circleci/ruby:2.6.5-node-browsers
+      - image: circleci/ruby:2.7.1-node-browsers
         environment:
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle

@@ -4,8 +4,7 @@
   **小規模ヘアサロン向け予約サイト**
 
 ## App URL
-  AWS:    ~~http://54.248.158.30/~~ (現在EC2 -> ECSへ移行中の為アクセスできません。)
-
+  AWS:    ~~http://54.248.158.30/~~ (現在`EC2`から`ECS`へ移行中の為アクセスできません。)
   ~~heroku:https://hairsalon-reservation.herokuapp.com/~~
 
 #### テストアカウント
@@ -16,14 +15,17 @@
 <br>
 
 ## インストール方法
+
   ```shell
     % git clone https://github.com/taiga-tech/ReservationApp.git
     % cd ReservationApp
-    ReservationApp % bundle install
-    ReservationApp % yarn install
-    ReservationApp % rails db:create
-    ReservationApp % rails db:migrate
-    ReservationApp % rails db:seed
+    ReservationApp % docker-compose build
+    ReservationApp % docker-compose run web yarn install
+    ReservationApp % docker-compose up -d
+    ReservationApp % docker-compose exec web bash
+    root@f9254e99db2c:/ReservationApp# rails db:create
+    root@f9254e99db2c:/ReservationApp# rails db:migrate
+    root@f9254e99db2c:/ReservationApp# rails db:seed
   ```
 
 <br>
@@ -31,12 +33,23 @@
 ## 開発環境
   |language|version|
   |:--------|:-------|
+  |Docker|19.03.13|
+  |docker-compose|1.27.4|
   |Ruby|2.6.5|
   |Ruby on Rails|6.0.3.3|
   |MySQL|5.6.47|
   |jQuery|4.4.0|
+  |Docker|19.03.13|
+  |docker-compose|1.27.4|
+  |CircleCI|2.1|
 
 <br>
+
+<!-- **CircleCiの動き**
+  - mastarへcommitするとテストが回り、テスト通過後、自動的にherokuへデプロイ
+  - master以外のブランチへcommitするとテストが回り、テスト通過後、マージ可
+  - テスト完了、失敗、slack通知
+-->
 
 ## アプリ機能
   - **ユーザー画面**
@@ -100,7 +113,7 @@
 
 # DB設計
 ## ER図
-<img width="800" alt="iphone" src="https://user-images.githubusercontent.com/67569270/91464572-ad309680-e8c7-11ea-8319-32042b184706.png">
+<img width="800" alt="ER図" src="https://user-images.githubusercontent.com/67569270/91464572-ad309680-e8c7-11ea-8319-32042b184706.png">
 
 ## Tables
 ### reservations
