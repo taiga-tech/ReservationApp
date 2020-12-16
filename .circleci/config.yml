@@ -226,7 +226,7 @@ jobs:
       - docker_setup
       # - laravel_setup
       # - test_run
-      # - test_notification
+      - test_notification
 
   # ecr_push:
   #   machine: true
