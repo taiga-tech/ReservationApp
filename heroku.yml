@@ -2,3 +2,5 @@ build:
   docker:
     app: ./docker/app/Dockerfile
     nginx: ./docker/nginx/Dockerfile
+run:
+  web: bundle exec puma -C config/puma.rb
