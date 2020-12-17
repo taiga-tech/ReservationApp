@@ -1,0 +1,4 @@
+build:
+  docker:
+    app: ./docker/app/Dockerfile
+    nginx: ./docker/nginx/Dockerfile
