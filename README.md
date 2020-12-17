@@ -4,7 +4,7 @@
   **小規模ヘアサロン向け予約サイト**
 
 ## App URL
-  AWS:    ~~http://54.248.158.30/~~ (現在`EC2`から`ECS`へ移行中の為アクセスできません。)
+  AWS:    http://54.248.158.30/
   ~~heroku:https://hairsalon-reservation.herokuapp.com/~~
 
 #### テストアカウント
