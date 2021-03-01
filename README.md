@@ -5,7 +5,7 @@
   **小規模ヘアサロン向け予約サイト**
 
 ## App URL
-  AWS:    http://reservationapp.tk/
+  AWS:    https://reservationapp.tk/
   ~~heroku:https://hairsalon-reservation.herokuapp.com/~~
 
 #### テストアカウント
