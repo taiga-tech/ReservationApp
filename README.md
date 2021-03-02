@@ -1,9 +1,11 @@
-![topimage](https://user-images.githubusercontent.com/67569270/90042708-fe585c00-dd05-11ea-8b9a-27e112c42653.png)
+![topimage](https://user-images.githubusercontent.com/67569270/107881766-10bb8880-6f29-11eb-9fba-10793b3edcbd.jpg)
+
 
 # ReservationApp
   **小規模ヘアサロン向け予約サイト**
 
 ## App URL
+
   - AWS:    https://reservationapp.tk/
   - ~~heroku:https://hairsalon-reservation.herokuapp.com/~~
 
