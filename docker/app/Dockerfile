@@ -11,6 +11,10 @@ COPY ./src/Gemfile.lock /var/www/Gemfile.lock
 
 RUN gem install bundler:2.1.4
 RUN bundle install
+RUN yarn install
+
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.6.0/wait /wait
+RUN chmod +x /wait
 
 COPY ./src /var/www
 
