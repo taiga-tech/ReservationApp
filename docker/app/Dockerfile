@@ -8,8 +8,10 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 WORKDIR /var/www
 COPY ./src/Gemfile /var/www/Gemfile
 COPY ./src/Gemfile.lock /var/www/Gemfile.lock
+COPY ./src/vendor/bundle /var/www/vendor/bundle
 
-RUN gem install bundler:2.1.4
+RUN gem install bundler:2.2.12
+RUN gem update --system
 RUN bundle install
 RUN yarn install
 

@@ -21,6 +21,7 @@ services:
     command: bundle exec puma -C config/puma.rb
     volumes:
       - ./src:/var/www
+      - ./src/vendor/bundle:/var/www/vendor/bundle
     depends_on:
       - db
 
