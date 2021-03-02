@@ -5,8 +5,9 @@
   **小規模ヘアサロン向け予約サイト**
 
 ## App URL
-  AWS:    https://reservationapp.tk/
-  ~~heroku:https://hairsalon-reservation.herokuapp.com/~~
+
+  - AWS:    https://reservationapp.tk/
+  - ~~heroku:https://hairsalon-reservation.herokuapp.com/~~
 
 #### テストアカウント
   - STAFF NAME : `test`
@@ -16,31 +17,35 @@
 <br>
 
 ## インストール方法
+  ※現在調整中です。
 
   ```shell
+    # git clone
     % git clone https://github.com/taiga-tech/ReservationApp.git
     % cd ReservationApp
-    ReservationApp % docker-compose build
-    ReservationApp % docker-compose run web yarn install
-    ReservationApp % docker-compose up -d
-    ReservationApp % docker-compose exec web bash
-    root@f9254e99db2c:/ReservationApp# rails db:create
-    root@f9254e99db2c:/ReservationApp# rails db:migrate
-    root@f9254e99db2c:/ReservationApp# rails db:seed
+
+    # docker build
+    % docker-compose build
+    % docker-compose run --rm app yarn install
+    % docker-compose up -d
+
+    # 初期設定
+    % docker-compose run --rm app rails db:create
+    % docker-compose run --rm rails db:migrate
+    % docker-compose run --rm rails db:seed
   ```
 
-<br>
+  <br>
 
-## 開発環境
+  ## 開発環境
   |language|version|
   |:--------|:-------|
-  |Docker|19.03.13|
-  |docker-compose|1.27.4|
   |Ruby|2.6.5|
   |Ruby on Rails|6.0.3.3|
   |MySQL|5.6.47|
   |jQuery|4.4.0|
-  |Docker|19.03.13|
+  |Docker DeskTop|3.0.1|
+  |Docker Engine|20.10.0|
   |docker-compose|1.27.4|
   |CircleCI|2.1|
 

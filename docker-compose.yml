@@ -9,15 +9,19 @@ services:
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --skip-character-set-client-handshake --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql-data:/var/lib/mysql
+    # environment:
+    #   WAIT_HOSTS: db:3306
 
   app:
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
     # command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    # command: bash -c "/wait && bundle exec puma -C config/puma.rb"
     command: bundle exec puma -C config/puma.rb
     volumes:
       - ./src:/var/www
+      - ./src/vendor/bundle:/var/www/vendor/bundle
     depends_on:
       - db
 

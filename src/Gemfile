@@ -81,6 +81,7 @@ gem 'phonelib'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'rails_sortable'
+gem 'react-rails'
 # gem "gmaps4rails"
 # gem "geocoder"
 
